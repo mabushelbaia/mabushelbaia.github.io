@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/output.css')}}">
-    <link href="{{url_for('static',filename='img/images.jpg')}}" rel="icon" class="rounded-3xl" />
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/47891125?v=4">
     <title>mabushelbaia</title>
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -18,19 +18,13 @@
     </script>
 </head>
 
-<body class="dark:bg-neutral-900 bg-neutral-50 transition-colors  delay-0">
+<body class="dark:bg-neutral-900 bg-neutral-50 transition-all delay-0.75">
     <div class="my-4 mx-5">
         <div class="flex flex-row">
             <a href="/">
-                <h1 class="dark:text-white font-bold text-lg">mabushelbaia<span class="text-green-400 dark:text-green-300">.dev</span></h1>
+                <h1 class="dark:text-white font-bold text-lg">mabushelbaia<span
+                        class="text-green-500 dark:text-green-300">.me</span></h1>
             </a>
-
-            <!-- Older Version -->
-            <!-- <a href="/">
-                <h1 class="dark:text-white flex items-center"><img class=" inline w-7 h-7 rounded-lg"
-                        src="{{url_for('static',filename='img/images.jpg')}}"><span
-                        class="ml-2 font-bold text-lg">mabushelbaia.dev</span></h1>
-            </a> -->
             <div class="ml-auto">
                 <button id="theme-toggle" type="button"
                     class="focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 dark:bg-white bg-neutral-800 text-white dark:text-neutral-800">
@@ -52,12 +46,11 @@
         <div class="flex-shrink-0 block">
             <div class="flex items-center">
                 <img class="inline-block flex-shrink-0 h-24 w-24  rounded-3xl"
-                    src="{{url_for('static',filename='img/images.jpg')}}" alt="Image Description" />
+                    src="https://avatars.githubusercontent.com/u/47891125?v=4" alt="Image Description" />
                 <div class="ml-3">
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Mohammad Abu-Shelbaia</h3>
-                    <a class=" text-sm font-medium text-gray-400 hover:text-gray-500 transition-colors"
+                    <a class=" text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-600 hover:dark:text-gray-500 transition-colors"
                         href="mailto:mabushelbaia@gmail.com">mabushelbaia@gmail.com</a>
-
                 </div>
             </div>
         </div>
@@ -70,45 +63,48 @@
             interfaces with <a href="https://tailwindcss.com/" target="_blank"
                 class="font-medium text-blue-500 dark:text-blue-400 hover:underline">Tailwind CSS</a>.
         </p>
+       
         <hr class="my-8 border-gray-400 dark:border-gray-500 ">
 
         <h5 class="mb-2 text-2xl font-bold tracking-tight dark:text-white">Featured Projects</h5>
-        {% for tuple in projects%}
-        <div class="flex flex-col md:flex-row justify-center align-center gap-2">
-            {% for project in tuple %}
-            <a class=" flex flex-col dark:text-white group w-full rounded-lg shadow  p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-200 dark:border-opacity-5 hover:-translate-y-1 hover:scale-105 hover:border-black hover:text-green-300 dark:hover:text-green-300"
-                href="{{project.html_url}}" target="_blank">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight ">
-                    {{project.name.replace('-', ' ')}}</h5>
-                <ul class="flex flex-wrap">
-                    {% for tag in project.topics%}
-                    {% if tag != 'featured' %}
-                    <li>
-                        <span
-                            class="inline-flex items-center gap-1.5 py-1 px-2.5 bg-green-100 text-green-800 text-xs font-medium mr-2   rounded-full dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 dark:ring-1 dark:ring-inset dark:ring-green-600/20 mb-2">
-                            <span class="w-1.5 h-1.5 inline-block bg-green-400 rounded-full"></span>{{" " +
-                            tag.title()
-                            }}</span>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-                <p class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400">{{project.description}}
-                </p>
-                <p
-                    class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold text-gray-800 dark:text-gray-200">
-                    Learn more
-                    <svg class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1" width="16" height="16"
-                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
-                            fill="currentColor" />
-                    </svg>
-                </p>
-            </a>
+        <div class="flex flex-col gap-4">
+            {% for tuple in projects%}
+            <div class="flex flex-col md:flex-row justify-center align-center gap-4">
+                {% for project in tuple %}
+                <a class=" flex flex-col dark:text-white group w-fit rounded-lg  p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-400 dark:border-opacity-20 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
+                    href="{{project.html_url}}" target="_blank">
+
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200 ">
+                        {{project.name.replace('-', ' ')}}</h5>
+                    <ul class="flex flex-wrap">
+                        {% for tag in project.topics%}
+                        {% if tag != 'featured' %}
+                        <li>
+                            <span
+                                class="inline-flex items-center gap-1.5 py-1 px-2.5 bg-green-100 text-green-800 text-xs font-medium mr-2   rounded-full dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 dark:ring-1 dark:ring-inset dark:ring-green-600/20 mb-2">
+                                <span class="w-1.5 h-1.5 inline-block bg-green-400 rounded-full"></span>{{" " +
+                                tag.title()
+                                }}</span>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <p class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400">{{project.description}}
+                    </p>
+                    <p class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold">
+                        Learn more
+                        <svg class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                                fill="currentColor" />
+                        </svg>
+                    </p>
+                </a>
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
-        {% endfor %}
         <hr class="my-8 border-gray-400 dark:border-gray-500 ">
     </div>
 
