@@ -32,19 +32,21 @@
 
   <body class="dark:bg-neutral-900 bg-neutral-50 transition-all delay-0.75">
     <div class="my-4 mx-5">
-      <div class="flex flex-row">
-        <a href="/">
-          <h1 class="dark:text-white font-bold text-lg">
-            mabushelbaia<span class="text-green-500 dark:text-green-300"
-              >.me</span
-            >
-          </h1>
-        </a>
+      <div class="flex flex-row items-center">
+        <div>
+          <a href="/">
+            <h1 class="dark:text-white font-bold text-lg">
+              mabushelbaia<span class="text-green-500 dark:text-green-300"
+                >.me</span
+              >
+            </h1>
+          </a>
+        </div>
         <div class="ml-auto">
           <button
             id="theme-toggle"
             type="button"
-            class="focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 dark:bg-white bg-neutral-800 text-white dark:text-neutral-800"
+            class="focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 dark:bg-white bg-neutral-800 text-white dark:text-neutral-800 items-center"
           >
             <svg
               id="theme-toggle-dark-icon"
@@ -140,8 +142,8 @@
           </svg>
         </a>
         <a
-        class="social-button"
-        target="_blank"
+          class="social-button"
+          target="_blank"
           href="mailto:mabushelbaia@gmail.com"
         >
           <svg
@@ -186,8 +188,8 @@
           </svg>
         </a>
         <a
-        class="social-button"
-        target="_blank"
+          class="social-button"
+          target="_blank"
           href="https://t.me/mabushelbaia"
         >
           <svg
@@ -203,12 +205,12 @@
         </a>
         <!-- Discord -->
         <a
-        class="social-button"
-        target="_blank"
+          class="social-button"
+          target="_blank"
           href="https://discord.gg/6pJ9emnM2s"
         >
           <svg
-          class="w-8 h-8 dark:text-white text-gray-800"
+            class="w-8 h-8 dark:text-white text-gray-800"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -221,8 +223,8 @@
         </a>
         <!-- Linkedin -->
         <a
-        class="social-button"
-        target="_blank"
+          class="social-button"
+          target="_blank"
           href="https://www.linkedin.com/in/mabushelbaia/"
         >
           <svg
@@ -256,7 +258,7 @@
           {% for project in tuple %}
 
           <a
-            class="flex flex-col dark:text-white group w-fit rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
+            class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
             href="{{project.html_url}}"
             target="_blank"
           >

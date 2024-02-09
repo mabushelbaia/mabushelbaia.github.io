@@ -1098,6 +1098,10 @@ input[type="range"]::-ms-fill-lower {
   width: fit-content;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -1130,8 +1134,24 @@ input[type="range"]::-ms-fill-lower {
   flex-wrap: wrap;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
 }
 
 .justify-center {
@@ -1247,8 +1267,20 @@ input[type="range"]::-ms-fill-lower {
   padding-bottom: 0.25rem;
 }
 
+.align-baseline {
+  vertical-align: baseline;
+}
+
 .align-middle {
   vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom;
 }
 
 .text-2xl {
