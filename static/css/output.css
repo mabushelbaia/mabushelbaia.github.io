@@ -1097,6 +1097,13 @@ input[type="range"]::-ms-fill-lower {
   width: -moz-fit-content;
   width: fit-content;
 }
+.w-full {
+  width: 100%;
+}
+
+.items-center {
+  align-items: center;
+}
 
 .max-w-3xl {
   max-width: 48rem;
