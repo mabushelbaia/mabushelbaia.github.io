@@ -6,10 +6,6 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/index")
 def index():
-    # convert each 2 items in a tuple and zip them together
-	return render_template("index.html", projects=lists)
-
-if __name__ == '__main__':
     response = requests.get('https://api.github.com/users/mabushelbaia/repos')
     # update the request based on the response 
     repos = response.json()
@@ -22,6 +18,7 @@ if __name__ == '__main__':
         if index % 2 == 0:
             lists.append([])
         lists[-1].append(element)
-    
+    return render_template("index.html", projects=lists)
 
-    app.run(debug=True, port=5000)
+if __name__ == '__main__':
+    app.run(debug=False)
