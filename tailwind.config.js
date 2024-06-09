@@ -11,19 +11,16 @@ module.exports = {
       sans: ['Plus Jakarta Sans', 'sans-serif'],
     },
     extend: {
-      animation: {
-        ["shine-infinite"]: "shine-infinite 2s ease-in-out infinite",
-      },
       keyframes: {
-        ["shine-infinite"]: {
-          "0%": {
-            transform: "skew(-12deg) translateX(-100%)",
-          },
-          "100%": {
-            transform: "skew(-12deg) translateX(100%)",
-          },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },
+      animation: {
+        fadeInUp: 'fadeInUp 0.5s ease-out forwards',
+      },
+
     },
   },
   plugins: [],
