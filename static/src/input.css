@@ -7,3 +7,5 @@
       @apply flex flex-col dark:text-white w-fit rounded-lg p-3 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200;
     }
   }
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');

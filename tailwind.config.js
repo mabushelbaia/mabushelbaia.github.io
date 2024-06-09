@@ -7,6 +7,9 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: ['Plus Jakarta Sans', 'sans-serif'],
+    },
     extend: {
       animation: {
         ["shine-infinite"]: "shine-infinite 2s ease-in-out infinite",
