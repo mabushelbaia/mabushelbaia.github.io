@@ -1,0 +1,192 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Class
+% Version 2.0 (12/10/23)
+%
+% This class originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Omar Roldan
+% Based on a template by  Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{multicol}
+\setlength{\columnsep}{0mm}
+%----------------------------------------------------------------------------------------
+\usepackage{lipsum}  
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.5\textwidth} 
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	{ \fontsize{16}{20} \textcolor{black}{\textbf{\MakeUppercase{Mohammad Abu-Shelbaia}}}} % First name
+	
+	\vspace{6pt}
+	
+	{\Large \href{mailto:mabushelbaia@gmail.com}{mabushelbaia@gmail.com}} 
+ 
+	\vspace{6pt}
+	
+{\Large (+970) 059-415-6035} 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.2\textwidth} % 20% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning mini pages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	
+\end{minipage}
+\begin{minipage}[t]{0.27\textwidth} % 27% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning mini pages
+	
+	\icon{Globe}{11}{\href{http://mabushelbaia.me}{mabushelbaia.me}}\\ 
+    \icon{Github}{11}{\href{https://github.com/mabushelbaia}{github.com/mabushelbaia}}\\
+    \icon{MapMarker}{11}{Ramallah, Palestine}\\
+    
+\end{minipage}
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.46\textwidth}
+    \cvsect{Summary}
+	\vspace{-6pt}
+ 
+    %Dummy text
+    Undergraduate Computer Engineering student at Birzeit University expected to graduate in July 2024. Passionate about software development, embedded systems, and robotics. Experienced in \textbf{Python} as the primary programming language, 
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.465\textwidth}
+    \cvsect{Skills}
+    \vspace{-6pt}
+    
+    \begin{minipage}[t]{0.2\textwidth}
+        \textbf{Languages:}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.73\textwidth}
+        Python, LaTeX, Markdown, Bash, Assembly, Java, C, SQL, HTML, CSS
+    \end{minipage}
+    \vspace{4mm}
+    
+    \begin{minipage}[t]{0.2\textwidth}
+        \textbf{Technologies:}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.73\textwidth}
+        Git, Django, Tailwind CSS, Docker, PostgreSQL, Arduino, Nginx, Gunicorn
+    \end{minipage}
+    
+    
+\end{minipage}
+
+% %----------------------------------------------------------------------------------------
+% %	EXPERIENCE
+% %----------------------------------------------------------------------------------------
+\cvsect{Experience}
+\begin{entrylist}
+    \entry
+        {3/2024 -- 7/2024}
+        {Backend Developer Intern}
+        {Silal}
+        {\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
+            \item Developed and maintained backend services using the Django framework.
+            \item Designed and implemented RESTful APIs for various applications.
+            \item Utilized Docker for containerization and deployment, ensuring a consistent development and production environment.
+            \item Integrated PostgreSQL as the primary database, optimizing queries and maintaining data integrity.
+            \item Configured and managed Nginx as a reverse proxy server to handle client requests and serve static files efficiently.
+            \item Deployed and managed WSGI applications using Gunicorn to handle Django web application processes.
+            \item Seamlessly integrated backend services with the user interface, utilizing Tailwind CSS for styling.
+            \item Conducted code reviews and debugging to maintain high code quality and performance.
+            \item Implemented authentication and authorization mechanisms to secure applications.
+        \end{itemize} 
+        \texttt{Docker} \slashsep \texttt{PostgreSQL} \slashsep \texttt{Nginx} \slashsep \texttt{Gunicorn} \slashsep \texttt{Django} \slashsep \texttt{Tailwind CSS}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	Projects
+%----------------------------------------------------------------------------------------
+\cvsect{Projects}
+\begin{entrylist}
+    \entry
+		{Web Scrapping \\ Python, iCal}
+		{Course Schedule}
+		{\href{https://github.com/mabushelbaia/Course-Schedule}{github.com}}
+		{Developed a Python script to automate the extraction of weekly schedules from my university website and convert them into recurring iCal events. This project aimed to improve personal organization and time management by eliminating manual schedule data entry.}
+
+    % \entry{}        
+    % \entry
+	% 	{Web Development\\ Flask, TailwindCSS}
+	% 	{Dynamic Portfolio Website}
+	% 	{\href{https://github.com/mabushelbaia/mabushelbaia.github.io}{github.com}}
+	% 	{Developed and deployed a fully functional personal website showcasing my GitHub projects. Implemented Tailwind CSS for responsive design and Flask for dynamic content generation, ensuring seamless presentation and user experience.}
+    \entry
+        {Robotics\\ ESP32, Arduino}
+        {Micromouse Robot}
+        {\href{https://github.com/mabushelbaia/Micromouse}{github.com}}
+        {Designed and implemented a maze-solving robot using the ESP32 microcontroller and the Arduino framework. The robot was programmed to autonomously navigate a maze and find the shortest path to the center using the Flood Fill algorithm.}
+        
+	\entry
+		{Embedded Systems\\ PIC16f877A-Assembly}
+		{PIC16f877A Calculator}
+		{\href{https://github.com/mabushelbaia/PIC16F877A-Calculator}{github.com}}
+		{Developed a functional calculator on a PIC16f877A microcontroller, showcasing skills in embedded systems design and assembly language programming.}
+    \entry
+        {Discord Bot\\ Python}
+        {Botzilla}
+        {\href{https://github.com/mabushelbaia/Botzilla}{github.com}}
+        {Developed a Discord bot using the Pycord library to automate server management tasks and provide entertainment features. The bot is capable of moderating chat, generating server statistics, and moderating server activities.}
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\vspace{-10 pt}
+\cvsect{Education}
+\begin{entrylist}
+    \entry
+		{9/2020 - 7/2024}
+		{Birzeit University}
+		{Bachelor}
+		{Computer Enginering\\
+        Expected Graduation: July 2024\\
+        \texttt{Cumulative Average: 87.4\%}
+        }
+
+\end{entrylist}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES
+%----------------------------------------------------------------------------------------
+\vspace{-10 pt}
+	\cvsect{Languages}
+    \vspace{-6pt}
+    
+    \hspace{26mm} \textbf{English} - C1 (CEFR), \textbf{ Arabic} - Native
+
+\end{document}
