@@ -1,708 +1,434 @@
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/css/output.css" />
-    <link
-      rel="icon"
-      href="https://avatars.githubusercontent.com/u/47891125?v=4"
-    />
-    <script
-      src="https://kit.fontawesome.com/402302bc43.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>mabushelbaia</title> 
-    <script>
-      if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
-  </head>
 
-  <body
-    class="dark:bg-neutral-900 bg-neutral-50 transition-all text-xs md:text-md font-sans font-semibold"
-  >
-    <header class="my-4 mx-9">
-      <div class="flex flex-row items-center">
-        <a href="/">
-          <h1 class="dark:text-white font-extrabold text-lg">
-            mabushelbaiaa 
-          </h1>
-        </a>
-        <div class="ml-auto">
-          <button
-            id="theme-toggle"
-            type="button"
-            class="focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 dark:bg-white bg-neutral-800 text-white dark:text-neutral-800"
-          >
-            <svg
-              id="theme-toggle-dark-icon"
-              class="hidden w-5 h-5"
-              fill="currentColor"
-              viewBox="0  0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-              ></path>
-            </svg>
-            <svg
-              id="theme-toggle-light-icon"
-              class="hidden w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./static/css/output.css" />
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/47891125?v=4" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>mabushelbaia</title>
+  <script>
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+
+<body class="dark:bg-neutral-900 bg-neutral-50 transition-all text-xs md:text-md font-sans font-semibold">
+  <header class="my-4 mx-9">
+    <div class="flex flex-row items-center">
+      <a href="/">
+        <h1 class="dark:text-white font-extrabold text-lg">
+          mabushelbaiaa
+        </h1>
+      </a>
+      <div class="ml-auto">
+        <button id="theme-toggle" type="button"
+          class="focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 dark:bg-white bg-neutral-800 text-white dark:text-neutral-800">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0  0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <container class="flex flex-col justify-center max-w-3xl mx-auto mt-24 px-8 gap-4" name="info">
+    <section id="about">
+      <div class="flex-shrink-0 block ml-4">
+        <div class="flex items-center">
+          <img class="inline-block flex-shrink-0 h-24 w-24 rounded-3xl"
+            src="https://avatars.githubusercontent.com/u/47891125?v=4" alt="Image Description" />
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white line-clamp-2 lg:line-clamp-none">
+              Mohammad <br class="sm:hidden block" />Abu-Shelbaia
+            </h3>
+            <a class="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-gray-600 hover:dark:text-gray-500 transition-colors"
+              href="mailto:mabushelbaia@gmail.com">mabushelbaia@gmail.com</a>
+          </div>
         </div>
       </div>
-    </header>
-    <container
-      class="flex flex-col justify-center max-w-3xl mx-auto mt-24 px-8 gap-4"
-      name="info"
-    >
-      <section id="about">
-        <div class="flex-shrink-0 block ml-4">
-          <div class="flex items-center">
-            <img
-              class="inline-block flex-shrink-0 h-24 w-24 rounded-3xl"
-              src="https://avatars.githubusercontent.com/u/47891125?v=4"
-              alt="Image Description"
-            />
-            <div class="ml-4">
-              <h3
-                class="text-2xl font-bold text-gray-900 dark:text-white line-clamp-2 lg:line-clamp-none"
-              >
-                Mohammad <br class="sm:hidden block" />Abu-Shelbaia
-              </h3>
-              <a
-                class="text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-gray-600 hover:dark:text-gray-500 transition-colors"
-                href="mailto:mabushelbaia@gmail.com"
-                >mabushelbaia@gmail.com</a
-              >
-            </div>
-          </div>
-        </div>
-        <p
-          class="mt-4 dark:text-white text-sm sm:text-base md:text-lg mb-4 max-w-2xl mx-auto"
-        >
+      <p class="mt-4 dark:text-white text-sm sm:text-base md:text-lg mb-4 max-w-2xl mx-auto">
         Computer Engineer Graduated from
-          <a
-            href="https://www.birzeit.edu/"
-            target="_blank"
-            class="text-green-600 dark:text-green-300 hover:underline"
-            >Birzeit University</a
-          >, specializing as a Backend Developer. My technical stack includes
-          Python, Django, Tailwind CSS, PostgreSQL, and Docker. Skilled in
-          automation and web scraping using Python.
-        </p>
+        <a href="https://www.birzeit.edu/" target="_blank"
+          class="text-green-600 dark:text-green-300 hover:underline">Birzeit University</a>, specializing as a Backend
+        Developer. My technical stack includes
+        Python, Django, Tailwind CSS, PostgreSQL, and Docker. Skilled in
+        automation and web scraping using Python.
+      </p>
 
-        <div class="flex flex-row gap-2 justify-center align-middle">
-          <a
-            class="social-button"
-            target="_blank"
-            href="mailto:mabushelbaia@gmail.com"
-          >
-            <svg
-              class="w-8 h-8 text-gray-800 dark:text-white"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0,0,256,256"
-              fill="currentColor"
-            >
-              <g
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-              >
-                <g transform="scale(5.33333,5.33333)">
-                  <path
-                    d="M45,16.2l-5,2.75l-5,4.75v16.3h7c1.657,0 3,-1.343 3,-3z"
-                  ></path>
-                  <path
-                    d="M3,16.2l3.614,1.71l6.386,5.79v16.3h-7c-1.657,0 -3,-1.343 -3,-3z"
-                  ></path>
-                  <path
-                    d="M35,11.2l-11,8.25l-11,-8.25l-1,5.8l1,6.7l11,8.25l11,-8.25l1,-6.7z"
-                  ></path>
-                  <path
-                    d="M3,12.298v3.902l10,7.5v-12.5l-3.124,-2.341c-0.744,-0.558 -1.648,-0.859 -2.578,-0.859v0c-2.374,0 -4.298,1.924 -4.298,4.298z"
-                  ></path>
-                  <path
-                    d="M45,12.298v3.902l-10,7.5v-12.5l3.124,-2.341c0.744,-0.558 1.648,-0.859 2.578,-0.859v0c2.374,0 4.298,1.924 4.298,4.298z"
-                  ></path>
-                </g>
+      <div class="flex flex-row gap-2 justify-center align-middle">
+        <a class="social-button" target="_blank" href="mailto:mabushelbaia@gmail.com">
+          <svg class="w-8 h-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" fill="currentColor">
+            <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+              stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+              font-size="none" text-anchor="none">
+              <g transform="scale(5.33333,5.33333)">
+                <path d="M45,16.2l-5,2.75l-5,4.75v16.3h7c1.657,0 3,-1.343 3,-3z"></path>
+                <path d="M3,16.2l3.614,1.71l6.386,5.79v16.3h-7c-1.657,0 -3,-1.343 -3,-3z"></path>
+                <path d="M35,11.2l-11,8.25l-11,-8.25l-1,5.8l1,6.7l11,8.25l11,-8.25l1,-6.7z"></path>
+                <path
+                  d="M3,12.298v3.902l10,7.5v-12.5l-3.124,-2.341c-0.744,-0.558 -1.648,-0.859 -2.578,-0.859v0c-2.374,0 -4.298,1.924 -4.298,4.298z">
+                </path>
+                <path
+                  d="M45,12.298v3.902l-10,7.5v-12.5l3.124,-2.341c0.744,-0.558 1.648,-0.859 2.578,-0.859v0c2.374,0 4.298,1.924 4.298,4.298z">
+                </path>
               </g>
-            </svg>
-          </a>
+            </g>
+          </svg>
+        </a>
 
-          <a
-            class="social-button"
-            target="_blank"
-            href="https://github.com/mabushelbaia"
-          >
-            <div class="flex items-center justify-center w-8 h-8">
-              <i class="fa-brands fa-github fa-2x"></i>
-            </div>
-          </a>
-          <a
-            class="social-button"
-            target="_blank"
-            href="https://www.linkedin.com/in/mabushelbaia/"
-          >
-            <div class="flex items-center justify-center w-8 h-8">
-              <i class="fa-brands fa-linkedin-in fa-2x"></i>
-            </div>
-          </a>
-
-          <a
-            class="social-button"
-            target="_blank"
-            href="https://leetcode.com/mabushelbaia/"
-          >
-            <svg
-              fill="currentColor"
-              class="w-8 h-8 text-gray-800 dark:text-white"
-              viewBox="0 0 24 24"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <title>LeetCode icon</title>
-                <path
-                  d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"
-                ></path>
-              </g>
-            </svg>
-          </a>
-
-          <!-- Linkedin -->
-
-          <!-- CV -->
-          <a class="social-button" target="_blank" href="mabushelbaia_cv.pdf">
-            <div class="flex items-center justify-center w-8 h-8">
-              <i class="fa-solid fa-file-pdf fa-2x"></i>
-            </div>
-          </a>
-        </div>
-      </section>
-      <hr class="my-8 border-gray-500 dark:border-gray-500" />
-      <section id="projects">
-        <h3 class="mb-6 text-3xl font-bold tracking-tight dark:text-white">
-          🛠️ Featured Projects
-        </h3>
-
-        <div class="grid sm:grid-cols-2 gap-4 grid-cols-1">
-          <a
-            class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
-            href="https://github.com/mabushelbaia/Botzilla"
-            target="_blank"
-          >
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200"
-            >
-              Botzilla
-            </h5>
-
-            <p
-              class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400"
-            >
-              Discord bot that automates server management, including user
-              moderation, server statistics, and user interaction.
-            </p>
-            <ul class="flex gap-0 mt-auto flex-wrap">
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Bot</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Pycord</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Discord</span
-                >
-              </li>
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >API</span
-                >
-              </li>
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Python</span
-                >
-              </li>
-            </ul>
-            <p
-              class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold"
-            >
-              Learn more
-              <svg
-                class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </p>
-          </a>
-
-          <a
-            class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
-            href="https://github.com/mabushelbaia/Course-Schedule"
-            target="_blank"
-          >
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200"
-            >
-              Course Schedule
-            </h5>
-
-            <p
-              class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400"
-            >
-              Python script to export the weekly schedule from Ritaj. It
-              generates an .ics file that can be imported into any calendar
-              application.
-            </p>
-            <ul class="flex gap-0 mt-auto flex-wrap">
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >iCalendar</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Scrapping</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Python</span
-                >
-              </li>
-            </ul>
-            <p
-              class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold"
-            >
-              Learn more
-              <svg
-                class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </p>
-          </a>
-
-          <a
-            class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
-            href="https://github.com/mabushelbaia/Padding-Oracle-Attack"
-            target="_blank"
-          >
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200"
-            >
-              Padding Oracle Attack
-            </h5>
-
-            <p
-              class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400"
-            >
-              Attack on CBC block mode with PKCS#5 padding, exploiting
-              cryptographic vulnerabilities and recovering plaintext data.
-            </p>
-            <ul class="flex gap-0 mt-auto flex-wrap">
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Cryptography</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Padding-Oracle-Attack</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >PKCS#5</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                  >Python</span
-                >
-              </li>
-            </ul>
-            <p
-              class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold"
-            >
-              Learn more
-              <svg
-                class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </p>
-          </a>
-
-          <a
-            class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
-            href="https://github.com/mabushelbaia/PIC16F877A-Calculator"
-            target="_blank"
-          >
-            <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200"
-            >
-              PIC16F877A Calculator
-            </h5>
-
-            <p
-              class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400"
-            >
-              A PIC16f877A based calculator that can perform basic arithmetic
-              operations written in PIC assembly.
-            </p>
-            <ul class="flex flex-wrap mt-auto">
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                >
-                  Assembly</span
-                >
-              </li>
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                >
-                  Proteus</span
-                >
-              </li>
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                >
-                  Calculator</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                >
-                  LCD16X2</span
-                >
-              </li>
-
-              <li>
-                <span
-                  class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap"
-                >
-                  PIC16F877A</span
-                >
-              </li>
-            </ul>
-            <p
-              class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold"
-            >
-              Learn more
-              <svg
-                class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </p>
-          </a>
-        </div>
-      </section>
-      <hr class="my-8 border-gray-500 dark:border-gray-500" />
-      <section id="tools">
-        <h1 class="mb-6 text-3xl font-bold tracking-tight dark:text-white">
-          💻 Languages and Tools
-        </h1>
-        <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <i
-              class="fab fa-python fa-4x group-hover:text-yellow-400 transition-all duration-200 ease-in"
-            ></i>
-            <h3 class="text-xl text-center font-bold">Python</h3>
+        <a class="social-button" target="_blank" href="https://github.com/mabushelbaia">
+          <div class="flex items-center justify-center w-8 h-8">
+            <i class="fa-brands fa-github fa-2x"></i>
           </div>
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <svg
-              class="w-14 h-14 group-hover:text-green-400 transition-all duration-200 ease-in"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.894 3.894 0 0 0-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059h3.924zM17.39.021h3.924v4.026H17.39z"
-                ></path>
-              </g>
-            </svg>
-            <h3 class="text-xl text-center font-bold">Django</h3>
+        </a>
+        <a class="social-button" target="_blank" href="https://www.linkedin.com/in/mabushelbaia/">
+          <div class="flex items-center justify-center w-8 h-8">
+            <i class="fa-brands fa-linkedin-in fa-2x"></i>
           </div>
+        </a>
 
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <svg
-              fill="currentColor"
-              class="h-16 w-16 group-hover:text-blue-400 transition-all duration-200 ease-in"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              xml:space="preserve"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z"
-                ></path>
-              </g>
-            </svg>
-            <h3 class="text-xl text-center font-bold">Tailwind CSS</h3>
-          </div>
+        <a class="social-button" target="_blank" href="https://leetcode.com/mabushelbaia/">
+          <svg fill="currentColor" class="w-8 h-8 text-gray-800 dark:text-white" viewBox="0 0 24 24" role="img"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>LeetCode icon</title>
+              <path
+                d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z">
+              </path>
+            </g>
+          </svg>
+        </a>
 
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <svg
-              fill="currentColor"
-              class="h-16 w-16 group-hover:text-blue-400 transition-all duration-200 ease-in"
-              viewBox="0 0 24 24"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <title>PostgreSQL icon</title>
-                <path
-                  d="M17.128 0a10.134 10.134 0 0 0-2.755.403l-.063.02A10.922 10.922 0 0 0 12.6.258C11.422.238 10.41.524 9.594 1 8.79.721 7.122.24 5.364.336 4.14.403 2.804.775 1.814 1.82.827 2.865.305 4.482.415 6.682c.03.607.203 1.597.49 2.879s.69 2.783 1.193 4.152c.503 1.37 1.054 2.6 1.915 3.436.43.419 1.022.771 1.72.742.49-.02.933-.235 1.315-.552.186.245.385.352.566.451.228.125.45.21.68.266.413.103 1.12.241 1.948.1.282-.047.579-.139.875-.27.011.33.024.653.037.98.041 1.036.067 1.993.378 2.832.05.137.187.843.727 1.466.54.624 1.598 1.013 2.803.755.85-.182 1.931-.51 2.649-1.532.71-1.01 1.03-2.459 1.093-4.809.016-.127.035-.235.055-.336l.169.015h.02c.907.041 1.891-.088 2.713-.47.728-.337 1.279-.678 1.68-1.283.1-.15.21-.331.24-.643s-.149-.8-.446-1.025c-.595-.452-.969-.28-1.37-.197a6.27 6.27 0 0 1-1.202.146c1.156-1.947 1.985-4.015 2.458-5.845.28-1.08.437-2.076.45-2.947.013-.871-.058-1.642-.58-2.309C21.36.6 19.067.024 17.293.004c-.055-.001-.11-.002-.165-.001zm-.047.64c1.678-.016 3.822.455 5.361 2.422.346.442.449 1.088.437 1.884-.013.795-.16 1.747-.429 2.79-.522 2.02-1.508 4.375-2.897 6.488a.756.756 0 0 0 .158.086c.29.12.951.223 2.27-.048.332-.07.575-.117.827.075a.52.52 0 0 1 .183.425.704.704 0 0 1-.13.336c-.255.383-.758.746-1.403 1.045-.571.266-1.39.405-2.116.413-.364.004-.7-.024-.985-.113l-.018-.007c-.11 1.06-.363 3.153-.528 4.108-.132.77-.363 1.382-.804 1.84-.44.458-1.063.734-1.901.914-1.038.223-1.795-.017-2.283-.428-.487-.41-.71-.954-.844-1.287-.092-.23-.14-.528-.186-.926-.046-.398-.08-.885-.103-1.434a51.426 51.426 0 0 1-.03-2.523 3.061 3.061 0 0 1-1.552.76c-.689.117-1.304.002-1.671-.09a2.276 2.276 0 0 1-.52-.201c-.17-.091-.332-.194-.44-.397a.56.56 0 0 1-.057-.381.61.61 0 0 1 .218-.331c.198-.161.46-.251.855-.333.719-.148.97-.249 1.123-.37.13-.104.277-.314.537-.622a1.16 1.16 0 0 1-.003-.041 2.96 2.96 0 0 1-1.33-.358c-.15.158-.916.968-1.85 2.092-.393.47-.827.74-1.285.759-.458.02-.872-.211-1.224-.552-.703-.683-1.264-1.858-1.753-3.186-.488-1.328-.885-2.807-1.167-4.067-.283-1.26-.45-2.276-.474-2.766-.105-2.082.382-3.485 1.217-4.37.836-.885 1.982-1.22 3.099-1.284 2.005-.115 3.909.584 4.294.734.742-.504 1.698-.818 2.892-.798a7.39 7.39 0 0 1 1.681.218l.02-.009a6.854 6.854 0 0 1 .739-.214A9.626 9.626 0 0 1 17.08.642zm.152.67h-.146a8.74 8.74 0 0 0-1.704.192c1.246.552 2.187 1.402 2.85 2.25a8.44 8.44 0 0 1 1.132 1.92c.11.264.184.487.226.66.021.087.035.16.04.236.002.038.004.077-.012.144 0 .003-.005.01-.006.013.03.876-.187 1.47-.213 2.306-.02.606.135 1.318.173 2.095.036.73-.052 1.532-.526 2.319.04.048.076.096.114.144 1.254-1.975 2.158-4.16 2.64-6.023.258-1.003.395-1.912.407-2.632.01-.72-.124-1.242-.295-1.46-1.342-1.716-3.158-2.153-4.68-2.165zm-4.79.256c-1.182.003-2.03.36-2.673.895-.663.553-1.108 1.31-1.4 2.085-.347.92-.466 1.81-.513 2.414l.013-.008c.357-.2.826-.4 1.328-.516.502-.115 1.043-.151 1.533.039s.895.637 1.042 1.315c.704 3.257-.219 4.468-.559 5.382a9.61 9.61 0 0 0-.331 1.013c.043-.01.086-.022.129-.026.24-.02.428.06.54.108.342.142.577.44.704.78.033.089.057.185.071.284a.336.336 0 0 1 .02.127 55.14 55.14 0 0 0 .013 3.738c.023.538.057 1.012.1 1.386.043.373.104.657.143.753.128.32.315.739.653 1.024.338.284.823.474 1.709.284.768-.165 1.242-.394 1.559-.723.316-.329.505-.787.626-1.488.181-1.05.545-4.095.589-4.668-.02-.432.044-.764.182-1.017.142-.26.362-.419.552-.505.095-.043.184-.072.257-.093a5.956 5.956 0 0 0-.243-.325 4.456 4.456 0 0 1-.666-1.099 8.296 8.296 0 0 0-.257-.483c-.133-.24-.301-.54-.477-.877-.352-.675-.735-1.493-.934-2.29-.198-.796-.227-1.62.281-2.201.45-.516 1.24-.73 2.426-.61-.035-.105-.056-.192-.115-.332a7.817 7.817 0 0 0-1.041-1.764c-1.005-1.285-2.632-2.559-5.146-2.6h-.115zm-6.642.052c-.127 0-.254.004-.38.011-1.01.058-1.965.351-2.648 1.075-.684.724-1.134 1.911-1.036 3.876.019.372.181 1.414.459 2.652.277 1.238.67 2.695 1.142 3.982.473 1.287 1.046 2.407 1.59 2.937.274.265.512.372.728.363.217-.01.478-.135.797-.518a43.244 43.244 0 0 1 1.81-2.048 3.497 3.497 0 0 1-1.167-3.15c.103-.739.117-1.43.105-1.976-.012-.532-.05-.886-.05-1.107a.336.336 0 0 1 0-.019v-.005l-.001-.006v-.001a9.893 9.893 0 0 1 .592-3.376c.28-.744.697-1.5 1.322-2.112-.614-.202-1.704-.51-2.884-.568a7.603 7.603 0 0 0-.38-.01zM18.199 6.9c-.679.009-1.06.184-1.26.413-.283.325-.31.895-.134 1.597.175.703.537 1.489.877 2.142.17.327.335.621.468.86.134.24.232.41.292.555.055.134.116.252.178.362.263-.555.31-1.1.283-1.668-.035-.703-.198-1.422-.174-2.15.027-.851.195-1.405.21-2.063a5.793 5.793 0 0 0-.74-.048zm-8.234.115a2.82 2.82 0 0 0-.616.074 4.665 4.665 0 0 0-1.153.449 2.417 2.417 0 0 0-.349.228l-.022.02c.006.146.035.5.047 1.021.012.57-.002 1.297-.112 2.084-.239 1.71 1.002 3.126 2.46 3.128.085-.351.225-.707.365-1.082.406-1.094 1.205-1.892.532-5.006-.11-.51-.328-.716-.628-.832a1.474 1.474 0 0 0-.524-.084zm7.917.204h.05c.066.002.127.009.18.022.054.012.1.03.138.055a.164.164 0 0 1 .075.11l-.001.008h.001-.001a.24.24 0 0 1-.035.135.668.668 0 0 1-.11.15.677.677 0 0 1-.386.212.59.59 0 0 1-.41-.103.608.608 0 0 1-.13-.118.26.26 0 0 1-.063-.127.17.17 0 0 1 .042-.128.384.384 0 0 1 .117-.09c.096-.054.226-.094.373-.116.055-.008.109-.012.16-.013zm-7.82.168c.053 0 .109.005.166.013.153.021.289.062.393.122a.446.446 0 0 1 .133.106.223.223 0 0 1 .054.17.302.302 0 0 1-.075.154.649.649 0 0 1-.143.13.64.64 0 0 1-.448.113.728.728 0 0 1-.42-.228.71.71 0 0 1-.118-.164.28.28 0 0 1-.041-.177c.015-.108.104-.164.191-.195a.866.866 0 0 1 .307-.04zm9.06 7.343l-.003.001c-.147.053-.268.075-.37.12a.452.452 0 0 0-.239.214c-.063.115-.117.319-.101.666a.51.51 0 0 0 .148.07c.171.052.458.086.778.081.638-.007 1.423-.156 1.84-.35a3.95 3.95 0 0 0 .943-.615h-.001c-1.393.288-2.18.211-2.663.012a1.315 1.315 0 0 1-.332-.2zm-8.031.094h-.021c-.053.005-.13.023-.279.188-.348.39-.47.635-.757.864-.287.228-.66.35-1.405.503-.236.048-.371.101-.461.144.029.024.026.03.07.053.109.06.249.113.362.142.32.08.846.173 1.395.08.549-.094 1.12-.357 1.607-1.04.084-.118.093-.292.024-.479-.07-.187-.223-.348-.331-.393a.653.653 0 0 0-.204-.06z"
-                ></path>
-              </g>
-            </svg>
-            <h3 class="text-xl text-center font-bold">PostgreSQL</h3>
+        <!-- Linkedin -->
+
+        <!-- CV -->
+        <a class="social-button" target="_blank" href="mabushelbaia_cv.pdf">
+          <div class="flex items-center justify-center w-8 h-8">
+            <i class="fa-solid fa-file-pdf fa-2x"></i>
           </div>
-          <div
-            class="group social-button w-full flex items-center justify-center flex-col gap-4"
-          >
-            <i
-              class="fab fa-docker fa-4x group-hover:text-blue-400 transition-all duration-200 ease-in"
-            ></i>
-            <h3 class="text-xl text-center font-bold">Docker</h3>
-          </div>
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <i
-              class="fab fa-git-alt fa-4x group-hover:text-orange-600 transition-all duration-200 ease-in"
-            ></i>
-            <h3 class="text-xl text-center font-bold">Git</h3>
-          </div>
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <svg
-              fill="currentColor"
-              class="h-16 w-16 group-hover:text-blue-500 transition-all duration-200 ease-in"
-              viewBox="0 0 32 32"
-              id="Camada_1"
-              version="1.1"
-              xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M28,25.6l-5.9,2.4l-9.7-9.6l-6.1,4.8L4,21.9V10.1l2.3-1.2l6.1,4.8L22.1,4L28,6.4V25.6z M15.7,16l6.3,5l0,0V11L15.7,16 L15.7,16z M6.3,19.7L6.3,19.7L10,16l-3.6-3.7l0,0L6.3,19.7L6.3,19.7z"
-                ></path>
-              </g>
-            </svg>
-            <h3 class="text-xl text-center font-bold">VS Code</h3>
-          </div>
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4"
-          >
-            <svg
-              fill="currentColor"
-              class="h-16 w-16 group-hover:text-blue-400 transition-all duration-200 ease-in"
-              viewBox="0 0 32 32"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <title>Arduino</title>
-                <path
-                  d="M30.258 9.777h0.075c0.087 0 0.125-0.012 0.125-0.087 0-0.062-0.038-0.087-0.125-0.087h-0.087v0.175zM30.233 10.152h-0.125v-0.65l0.25-0.012c0.010-0.001 0.023-0.001 0.035-0.001 0.069 0 0.134 0.014 0.193 0.040l-0.003-0.001c0.045 0.025 0.075 0.072 0.075 0.126 0 0.004-0 0.008-0 0.012l0-0.001c0 0.075-0.050 0.125-0.137 0.137 0.062 0.025 0.087 0.075 0.112 0.162l0.038 0.162h-0.15c-0.025-0.025-0.025-0.087-0.050-0.162-0.025-0.063-0.050-0.087-0.137-0.087h-0.062l-0.025 0.275zM29.859 9.827c-0 0.004-0 0.009-0 0.014 0 0.268 0.218 0.486 0.486 0.486 0.005 0 0.010-0 0.015-0l-0.001 0c0.265-0.014 0.475-0.232 0.475-0.5s-0.21-0.486-0.474-0.5l-0.001-0c-0.013-0.001-0.027-0.002-0.042-0.002-0.254 0-0.46 0.206-0.46 0.46 0 0.015 0.001 0.029 0.002 0.044l-0-0.002zM30.996 9.827c0 0.004 0 0.010 0 0.015 0 0.344-0.279 0.624-0.624 0.624-0.014 0-0.027-0-0.041-0.001l0.002 0c-0.008 0-0.016 0.001-0.025 0.001-0.348 0-0.63-0.279-0.637-0.625v-0.001c0.008-0.36 0.301-0.649 0.662-0.65h0c0.009-0.001 0.020-0.001 0.032-0.001 0.348 0 0.631 0.282 0.631 0.631 0 0.003-0 0.005-0 0.008v-0zM23.923 16.737h1.487v-1.45h-1.5v-1.487h-1.412v1.5h-1.5v1.437h1.5v1.475h1.437v-1.462zM6.265 16.737h4.424v-1.45h-4.411v1.45zM17.25 16c1.037-2.222 2.974-3.876 5.328-4.511l0.058-0.013c0.194-0.033 0.418-0.052 0.646-0.052 0.045 0 0.090 0.001 0.135 0.002l-0.007-0c0.041-0.001 0.090-0.002 0.139-0.002 2.552 0 4.628 2.034 4.697 4.569l0 0.006c-0.083 2.544-2.165 4.575-4.721 4.575-0.036 0-0.072-0-0.108-0.001l0.005 0c-0.25 0-0.525-0.025-0.775-0.050-2.41-0.652-4.345-2.305-5.365-4.473l-0.021-0.050zM9.102 20.499c-0.197 0.033-0.425 0.052-0.657 0.052-0.046 0-0.092-0.001-0.137-0.002l0.007 0c-0.030 0.001-0.066 0.001-0.102 0.001-2.554 0-4.633-2.032-4.709-4.568l-0-0.007c0.083-2.544 2.165-4.575 4.721-4.575 0.036 0 0.072 0 0.108 0.001l-0.005-0c0.25 0 0.525 0.025 0.787 0.050 2.417 0.639 4.356 2.296 5.365 4.473l0.021 0.050c-1.025 2.23-2.967 3.889-5.329 4.511l-0.057 0.013zM30.771 16c-0.077-3.93-3.28-7.087-7.222-7.087-0.044 0-0.089 0-0.133 0.001l0.007-0c-0.362 0-0.75 0.025-1.125 0.062-2.731 0.545-5.004 2.178-6.387 4.42l-0.024 0.042c-1.423-2.273-3.694-3.902-6.36-4.45l-0.063-0.011c-0.375-0.037-0.75-0.062-1.125-0.062-0.034-0.001-0.074-0.001-0.114-0.001-3.941 0-7.145 3.156-7.222 7.079l-0 0.007c0.077 3.93 3.281 7.086 7.222 7.086 0.040 0 0.080-0 0.12-0.001l-0.006 0c0.406-0.001 0.805-0.028 1.196-0.080l-0.047 0.005c2.734-0.539 5.011-2.169 6.399-4.407l0.024-0.041c1.42 2.275 3.693 3.905 6.36 4.45l0.063 0.011c0.387 0.037 0.75 0.062 1.137 0.062 0.023 0 0.049 0 0.076 0 3.941 0 7.145-3.156 7.221-7.079l0-0.007z"
-                ></path>
-              </g>
-            </svg>
-            <h3 class="text-xl text-center font-bold">Arduino</h3>
-          </div>
-          <div
-            class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4 col-span-2 md:col-span-1"
-          >
-            <svg
-              fill="currentColor"
-              class="h-16 w-16 group-hover:text-emerald-500 transition-all duration-200 ease-in"
-              viewBox="0 0 24 24"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <title>LaTeX icon</title>
-                <path
-                  d="M2.176 2.813c.233.42.477.779.73 1.09h-.002a2.313 2.313 0 0 0-.357-.026 2.702 2.702 0 0 0-.791.13c.494.415.912.717 1.281.95.905.294 1.912.782 2.77 1.328.429.273.812.543 1.113.78.301.236.567.471.621.574.054.102-.001.139-.082.06-.081-.078-.302-.319-.6-.553a14.203 14.203 0 0 0-1.107-.775c-.775-.49-1.982-.96-2.715-1.414-.57-.182-1.182-.207-1.902.135.526.33.967.568 1.353.746 1.104.155 2.259.695 3.225 1.308.483.308.905.616 1.22.868.158.125.29.237.39.328.098.09.176.155.198.21.03.074-.02.104-.085.057-.032-.022-.085-.102-.182-.191a7.475 7.475 0 0 0-.385-.326c-.312-.25-.73-.553-1.21-.858-.894-.561-2.233-1.012-3.175-1.396-.601-.11-1.223-.06-1.904.389.449.2.837.35 1.182.464-.566.02-1.128.197-1.676.717.477.118.885.198 1.244.25-.44.09-.87.3-1.289.72.324.07.616.123.883.163-.329.159-.64.406-.924.783.373.03.703.042 1 .043-.36.166-.696.428-.996.85.533.026.979.024 1.363.002-.422.172-.812.464-1.144.969a11.66 11.66 0 0 0 1.629-.077l-.008.002c.99-.073 2.3.127 2.965.848.052.057-.024.118-.073.074-.648-.58-1.494-.827-2.892-.922-.544.15-1.047.447-1.461 1.075.535.007.981-.011 1.365-.047-.47.255-.871.643-1.137 1.304.483-.091.888-.19 1.237-.293-.363.265-.669.636-.873 1.194.324-.072.611-.146.87-.221a2.52 2.52 0 0 0-.513 1.096c.351-.13.655-.256.926-.38h.002c.283-.23.71-.457 1.289-.622.506-.145 1.082-.284 1.652-.301a3.63 3.63 0 0 1 .244 0c.1.003.063.104.006.103-.728-.008-1.302.132-1.873.295a9.8 9.8 0 0 0-1.318.526 2.5 2.5 0 0 0-.551 1.191c.495-.198.899-.388 1.238-.568-.311.333-.543.76-.635 1.357a11.794 11.794 0 0 0 1.442-.744c-.432.362-.764.844-.879 1.588a10.81 10.81 0 0 0 1.766-.957c-.184.372-.281.807-.235 1.35.762-.585 1.245-1.056 1.604-1.473a2.67 2.67 0 0 0 .076.885c.449-.772.897-1.093 1.353-1.358-.563.37-.464.671-.464 1.014.683-.72 1.636-1.483 1.927-1.961-.39.585-.547 1.14-.65 1.629-1.994 1.055-3.21 1.33-4.57 1.752.528.194 1.095.383.861.652l-.625.623c.399-.124.805-.3 1.158-.058-.034.327-.448.493-.8.683.62-.224.756-.173.92-.12.08.391-.203.602-.387.86 1.565-1.19 3.606-2.128 5.045-2.521 2.022-.681 4.632-1.39 5.341-3.117.235-.946.478-1.905.707-2.842-.111-.035-.245-.063-.35-.133a.655.655 0 0 1-.234-.299c-.252.066-.441.031-.56-.088-.118-.117-.168-.294-.203-.49-.204.042-.364.017-.47-.076-.114-.102-.17-.26-.198-.443l-.006-.041.037-.014a.84.84 0 0 0 .3-.195.256.256 0 0 0 .071-.225l-.006-.037.03-.016c.163-.093.346-.168.43-.279a.277.277 0 0 0 .05-.21.886.886 0 0 0-.154-.36l-.028-.04.04-.027c.118-.09.246-.176.31-.257.032-.041.046-.077.045-.11 0-.033-.015-.071-.065-.119l-.097-.094.135.006c.212.009.396-.006.539-.053a.5.5 0 0 0 .296-.224.455.455 0 0 1-.005-.074.455.455 0 0 1 .455-.455.455.455 0 0 1 .455.455.455.455 0 0 1-.022.132c.184.016.359.008.524-.064l.037-.012c.236-.084.333.045.72-.459-1.69-2.191-4.158-.632-4.978 1.625-.21.577-1.405.577-1.752-.002-1.37-2.95-5.531-6.067-9.072-7.216zm.732 1.091c.252-.009 1.13.453 1.31.52a23.6 23.6 0 0 1 1.567.967c.505.336.961.663 1.274.902.156.12.277.218.351.285.037.034.064.057.08.082a.079.079 0 0 1 .01.022.056.056 0 0 1-.004.045c-.01.02-.03.03-.043.03a.075.075 0 0 1-.027 0c-.057.001-.202-.163-.496-.415a23.427 23.427 0 0 0-2.758-1.826c-.504-.28-.956-.54-1.264-.612zM1.766 6.691c.812 0 1.89.365 2.931.92C5.74 8.168 6.74 8.83 7.223 9.39c.066.076-.019.123-.077.068-.52-.496-1.462-1.206-2.498-1.758-.637-.336-2.148-1.005-2.882-1.008zm-.428.967c1.116.015 2.348.446 3.432.996.541.275 1.024.57 1.396.832.372.263.673.523.734.657.062.133-.019.13-.086.054a4.404 4.404 0 0 0-.705-.627 11.496 11.496 0 0 0-1.384-.824c-.963-.482-2.284-.926-3.387-1.088zm.162.815c.066-.003.133 0 .201.006.822.071 1.719.366 2.533.748 1.087.509 2.035 1.157 2.434 1.666.035.045-.011.133-.078.064-.428-.44-1.32-1.132-2.397-1.637C3.28 8.9 1.91 8.45.93 8.541c.188-.024.373-.061.57-.068zm16.541.013c-.365.475-.53.425-.701.465.093.431.35.587.586.772 2.02-.372 4.29-.274 6.08-.225l-5.963-1.01-.002-.002zm-.803.494c-.19.077-.387.079-.584.06a.455.455 0 0 1-.39.224.455.455 0 0 1-.414-.268.616.616 0 0 1-.301.21 1.57 1.57 0 0 1-.492.054c.02.035.054.067.054.103a.275.275 0 0 1-.07.174c-.073.093-.188.172-.295.25a.946.946 0 0 1 .149.361.388.388 0 0 1-.07.284c-.106.14-.287.211-.438.295a.374.374 0 0 1-.092.267.886.886 0 0 1-.297.197c.027.157.074.283.154.354.086.076.212.104.426.049l.055-.016.01.055c.034.207.088.386.187.484.1.099.243.135.502.055l.049-.016.015.05a.53.53 0 0 0 .21.282c.087.06.25.112.36.147.798-.868 1.525-1.772 1.884-2.86-.225-.176-.508-.335-.612-.795zM1.44 9.348a6.683 6.683 0 0 1 2.77.64c.92.43 1.658.939 1.975 1.307.074.087-.02.122-.073.074a8.186 8.186 0 0 0-1.947-1.29c-.904-.416-2.196-.646-3.16-.718.145-.01.29-.014.435-.013zm.432.816c.61.02 1.24.155 1.807.352.756.262 1.42.614 1.746.98.044.05-.005.13-.072.07-.349-.304-.962-.694-1.707-.953-.575-.195-1.616-.367-2.27-.396.196-.021.293-.06.496-.053zm.893 1.781c.05 0 .103.004.156.008.424.034.886.133 1.342.406.043.026.049.136-.05.09-.856-.402-1.327-.489-2.458-.308.338-.113.652-.199 1.01-.196zm.416.784c.3.004.613.062.998.216.044.018.08.126-.033.094-.857-.243-1.167-.328-2.288.104.281-.229.62-.367 1.022-.403.1-.009.2-.013.3-.011zm1.459.681c.156 0 .311.009.46.026.053.005.055.102-.007.1a7.9 7.9 0 0 0-1.838.114c-.243.046-.422.044-1.404.46.286-.234.795-.451 1.386-.56.444-.08.934-.142 1.403-.14zm1.336.906c.035-.005.105.084.017.1-.73.136-1.244.268-1.795.455-.216.074-.579.207-1.242.588.259-.269.655-.494 1.213-.684a10.65 10.65 0 0 1 1.807-.459zm.31.508c.075-.012.099.087.022.102-1.217.24-1.76.556-2.541 1.144.503-.523 1.296-1.05 2.52-1.246zm.596.447a.095.095 0 0 1 .03 0c.06.011.069.089-.009.1-.872.13-1.479.555-2.257 1.332.295-.494 1.006-1.242 2.236-1.432zm.371.391c.046-.005.116.073.025.1-.193.056-.433.15-.67.3-.182.118-.302.202-.6.508.112-.245.299-.435.546-.591.246-.157.507-.293.699-.317z"
-                ></path>
-              </g>
-            </svg>
-            <h3 class="text-xl text-center font-bold">LaTeX</h3>
-          </div>
-        </div>
-      </section>
-      <hr class="mt-6 border-gray-500 dark:border-gray-500" />
-      <footer class="mb-8">
-        <div class="flex items-center justify-center mb-6">
-          <p class="text-sm font-semibold text-gray-600 dark:text-gray-400">
-            &copy; 2024 All rights reserved | Built Using
-            <span class="text-blue-600 dark:text-blue-400">Tailwind CSS</span>
+        </a>
+      </div>
+    </section>
+    <hr class="my-8 border-gray-500 dark:border-gray-500" />
+    <section id="projects">
+      <h3 class="mb-6 text-3xl font-bold tracking-tight dark:text-white">
+        🛠️ Featured Projects
+      </h3>
+
+      <div class="grid sm:grid-cols-2 gap-4 grid-cols-1">
+        <a class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
+          href="https://github.com/mabushelbaia/Botzilla" target="_blank">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+            Botzilla
+          </h5>
+
+          <p class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400">
+            Discord bot that automates server management, including user
+            moderation, server statistics, and user interaction.
           </p>
-        </div>
-      </footer>
-    </container>
+          <ul class="flex gap-0 mt-auto flex-wrap">
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Bot</span>
+            </li>
 
-    <script src="./static/js/app.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"
-      defer
-    ></script>
-  </body>
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Pycord</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Discord</span>
+            </li>
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">API</span>
+            </li>
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Python</span>
+            </li>
+          </ul>
+          <p class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold">
+            Learn more
+            <svg class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1" width="16" height="16"
+              viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                fill="currentColor"></path>
+            </svg>
+          </p>
+        </a>
+
+        <a class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
+          href="https://github.com/mabushelbaia/Course-Schedule" target="_blank">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+            Course Schedule
+          </h5>
+
+          <p class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400">
+            Python script to export the weekly schedule from Ritaj. It
+            generates an .ics file that can be imported into any calendar
+            application.
+          </p>
+          <ul class="flex gap-0 mt-auto flex-wrap">
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">iCalendar</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Scrapping</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Python</span>
+            </li>
+          </ul>
+          <p class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold">
+            Learn more
+            <svg class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1" width="16" height="16"
+              viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                fill="currentColor"></path>
+            </svg>
+          </p>
+        </a>
+
+        <a class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
+          href="https://github.com/mabushelbaia/Padding-Oracle-Attack" target="_blank">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+            Padding Oracle Attack
+          </h5>
+
+          <p class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400">
+            Attack on CBC block mode with PKCS#5 padding, exploiting
+            cryptographic vulnerabilities and recovering plaintext data.
+          </p>
+          <ul class="flex gap-0 mt-auto flex-wrap">
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Cryptography</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Padding-Oracle-Attack</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">PKCS#5</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">Python</span>
+            </li>
+          </ul>
+          <p class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold">
+            Learn more
+            <svg class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1" width="16" height="16"
+              viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                fill="currentColor"></path>
+            </svg>
+          </p>
+        </a>
+
+        <a class="flex flex-col dark:text-white group w-full rounded-lg p-6 transition-all dark:hover:bg-white/[.075] hover:bg-gray-100 dark:hover:border-white border border-gray-500 dark:border-opacity-40 hover:-translate-y-1 hover:scale-105 hover:border-black duration-200"
+          href="https://github.com/mabushelbaia/PIC16F877A-Calculator" target="_blank">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+            PIC16F877A Calculator
+          </h5>
+
+          <p class="mb-3 line-clamp-3 font-normal text-gray-700 dark:text-gray-400">
+            A PIC16f877A based calculator that can perform basic arithmetic
+            operations written in PIC assembly.
+          </p>
+          <ul class="flex flex-wrap mt-auto">
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">
+                Assembly</span>
+            </li>
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">
+                Proteus</span>
+            </li>
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">
+                Calculator</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">
+                LCD16X2</span>
+            </li>
+
+            <li>
+              <span
+                class="mr-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-bold text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-900 dark:text-green-400 dark:bg-opacity-5 mb-2 whitespace-nowrap">
+                PIC16F877A</span>
+            </li>
+          </ul>
+          <p class="mt-auto inline-flex items-center gap-x-2 text-sm font-semibold">
+            Learn more
+            <svg class="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1" width="16" height="16"
+              viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                fill="currentColor"></path>
+            </svg>
+          </p>
+        </a>
+      </div>
+    </section>
+    <hr class="my-8 border-gray-500 dark:border-gray-500" />
+    <section id="tools">
+      <h1 class="mb-6 text-3xl font-bold tracking-tight dark:text-white">
+        💻 Languages and Tools
+      </h1>
+      <div class="grid md:grid-cols-3 grid-cols-2 gap-3">
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <i class="fab fa-python fa-4x group-hover:text-yellow-400 transition-all duration-200 ease-in"></i>
+          <h3 class="text-xl text-center font-bold">Python</h3>
+        </div>
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <svg class="w-14 h-14 group-hover:text-green-400 transition-all duration-200 ease-in" fill="currentColor"
+            viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.894 3.894 0 0 0-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059h3.924zM17.39.021h3.924v4.026H17.39z">
+              </path>
+            </g>
+          </svg>
+          <h3 class="text-xl text-center font-bold">Django</h3>
+        </div>
+
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <svg fill="currentColor" class="h-16 w-16 group-hover:text-blue-400 transition-all duration-200 ease-in"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z">
+              </path>
+            </g>
+          </svg>
+          <h3 class="text-xl text-center font-bold">Tailwind CSS</h3>
+        </div>
+
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <svg fill="currentColor" class="h-16 w-16 group-hover:text-blue-400 transition-all duration-200 ease-in"
+            viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>PostgreSQL icon</title>
+              <path
+                d="M17.128 0a10.134 10.134 0 0 0-2.755.403l-.063.02A10.922 10.922 0 0 0 12.6.258C11.422.238 10.41.524 9.594 1 8.79.721 7.122.24 5.364.336 4.14.403 2.804.775 1.814 1.82.827 2.865.305 4.482.415 6.682c.03.607.203 1.597.49 2.879s.69 2.783 1.193 4.152c.503 1.37 1.054 2.6 1.915 3.436.43.419 1.022.771 1.72.742.49-.02.933-.235 1.315-.552.186.245.385.352.566.451.228.125.45.21.68.266.413.103 1.12.241 1.948.1.282-.047.579-.139.875-.27.011.33.024.653.037.98.041 1.036.067 1.993.378 2.832.05.137.187.843.727 1.466.54.624 1.598 1.013 2.803.755.85-.182 1.931-.51 2.649-1.532.71-1.01 1.03-2.459 1.093-4.809.016-.127.035-.235.055-.336l.169.015h.02c.907.041 1.891-.088 2.713-.47.728-.337 1.279-.678 1.68-1.283.1-.15.21-.331.24-.643s-.149-.8-.446-1.025c-.595-.452-.969-.28-1.37-.197a6.27 6.27 0 0 1-1.202.146c1.156-1.947 1.985-4.015 2.458-5.845.28-1.08.437-2.076.45-2.947.013-.871-.058-1.642-.58-2.309C21.36.6 19.067.024 17.293.004c-.055-.001-.11-.002-.165-.001zm-.047.64c1.678-.016 3.822.455 5.361 2.422.346.442.449 1.088.437 1.884-.013.795-.16 1.747-.429 2.79-.522 2.02-1.508 4.375-2.897 6.488a.756.756 0 0 0 .158.086c.29.12.951.223 2.27-.048.332-.07.575-.117.827.075a.52.52 0 0 1 .183.425.704.704 0 0 1-.13.336c-.255.383-.758.746-1.403 1.045-.571.266-1.39.405-2.116.413-.364.004-.7-.024-.985-.113l-.018-.007c-.11 1.06-.363 3.153-.528 4.108-.132.77-.363 1.382-.804 1.84-.44.458-1.063.734-1.901.914-1.038.223-1.795-.017-2.283-.428-.487-.41-.71-.954-.844-1.287-.092-.23-.14-.528-.186-.926-.046-.398-.08-.885-.103-1.434a51.426 51.426 0 0 1-.03-2.523 3.061 3.061 0 0 1-1.552.76c-.689.117-1.304.002-1.671-.09a2.276 2.276 0 0 1-.52-.201c-.17-.091-.332-.194-.44-.397a.56.56 0 0 1-.057-.381.61.61 0 0 1 .218-.331c.198-.161.46-.251.855-.333.719-.148.97-.249 1.123-.37.13-.104.277-.314.537-.622a1.16 1.16 0 0 1-.003-.041 2.96 2.96 0 0 1-1.33-.358c-.15.158-.916.968-1.85 2.092-.393.47-.827.74-1.285.759-.458.02-.872-.211-1.224-.552-.703-.683-1.264-1.858-1.753-3.186-.488-1.328-.885-2.807-1.167-4.067-.283-1.26-.45-2.276-.474-2.766-.105-2.082.382-3.485 1.217-4.37.836-.885 1.982-1.22 3.099-1.284 2.005-.115 3.909.584 4.294.734.742-.504 1.698-.818 2.892-.798a7.39 7.39 0 0 1 1.681.218l.02-.009a6.854 6.854 0 0 1 .739-.214A9.626 9.626 0 0 1 17.08.642zm.152.67h-.146a8.74 8.74 0 0 0-1.704.192c1.246.552 2.187 1.402 2.85 2.25a8.44 8.44 0 0 1 1.132 1.92c.11.264.184.487.226.66.021.087.035.16.04.236.002.038.004.077-.012.144 0 .003-.005.01-.006.013.03.876-.187 1.47-.213 2.306-.02.606.135 1.318.173 2.095.036.73-.052 1.532-.526 2.319.04.048.076.096.114.144 1.254-1.975 2.158-4.16 2.64-6.023.258-1.003.395-1.912.407-2.632.01-.72-.124-1.242-.295-1.46-1.342-1.716-3.158-2.153-4.68-2.165zm-4.79.256c-1.182.003-2.03.36-2.673.895-.663.553-1.108 1.31-1.4 2.085-.347.92-.466 1.81-.513 2.414l.013-.008c.357-.2.826-.4 1.328-.516.502-.115 1.043-.151 1.533.039s.895.637 1.042 1.315c.704 3.257-.219 4.468-.559 5.382a9.61 9.61 0 0 0-.331 1.013c.043-.01.086-.022.129-.026.24-.02.428.06.54.108.342.142.577.44.704.78.033.089.057.185.071.284a.336.336 0 0 1 .02.127 55.14 55.14 0 0 0 .013 3.738c.023.538.057 1.012.1 1.386.043.373.104.657.143.753.128.32.315.739.653 1.024.338.284.823.474 1.709.284.768-.165 1.242-.394 1.559-.723.316-.329.505-.787.626-1.488.181-1.05.545-4.095.589-4.668-.02-.432.044-.764.182-1.017.142-.26.362-.419.552-.505.095-.043.184-.072.257-.093a5.956 5.956 0 0 0-.243-.325 4.456 4.456 0 0 1-.666-1.099 8.296 8.296 0 0 0-.257-.483c-.133-.24-.301-.54-.477-.877-.352-.675-.735-1.493-.934-2.29-.198-.796-.227-1.62.281-2.201.45-.516 1.24-.73 2.426-.61-.035-.105-.056-.192-.115-.332a7.817 7.817 0 0 0-1.041-1.764c-1.005-1.285-2.632-2.559-5.146-2.6h-.115zm-6.642.052c-.127 0-.254.004-.38.011-1.01.058-1.965.351-2.648 1.075-.684.724-1.134 1.911-1.036 3.876.019.372.181 1.414.459 2.652.277 1.238.67 2.695 1.142 3.982.473 1.287 1.046 2.407 1.59 2.937.274.265.512.372.728.363.217-.01.478-.135.797-.518a43.244 43.244 0 0 1 1.81-2.048 3.497 3.497 0 0 1-1.167-3.15c.103-.739.117-1.43.105-1.976-.012-.532-.05-.886-.05-1.107a.336.336 0 0 1 0-.019v-.005l-.001-.006v-.001a9.893 9.893 0 0 1 .592-3.376c.28-.744.697-1.5 1.322-2.112-.614-.202-1.704-.51-2.884-.568a7.603 7.603 0 0 0-.38-.01zM18.199 6.9c-.679.009-1.06.184-1.26.413-.283.325-.31.895-.134 1.597.175.703.537 1.489.877 2.142.17.327.335.621.468.86.134.24.232.41.292.555.055.134.116.252.178.362.263-.555.31-1.1.283-1.668-.035-.703-.198-1.422-.174-2.15.027-.851.195-1.405.21-2.063a5.793 5.793 0 0 0-.74-.048zm-8.234.115a2.82 2.82 0 0 0-.616.074 4.665 4.665 0 0 0-1.153.449 2.417 2.417 0 0 0-.349.228l-.022.02c.006.146.035.5.047 1.021.012.57-.002 1.297-.112 2.084-.239 1.71 1.002 3.126 2.46 3.128.085-.351.225-.707.365-1.082.406-1.094 1.205-1.892.532-5.006-.11-.51-.328-.716-.628-.832a1.474 1.474 0 0 0-.524-.084zm7.917.204h.05c.066.002.127.009.18.022.054.012.1.03.138.055a.164.164 0 0 1 .075.11l-.001.008h.001-.001a.24.24 0 0 1-.035.135.668.668 0 0 1-.11.15.677.677 0 0 1-.386.212.59.59 0 0 1-.41-.103.608.608 0 0 1-.13-.118.26.26 0 0 1-.063-.127.17.17 0 0 1 .042-.128.384.384 0 0 1 .117-.09c.096-.054.226-.094.373-.116.055-.008.109-.012.16-.013zm-7.82.168c.053 0 .109.005.166.013.153.021.289.062.393.122a.446.446 0 0 1 .133.106.223.223 0 0 1 .054.17.302.302 0 0 1-.075.154.649.649 0 0 1-.143.13.64.64 0 0 1-.448.113.728.728 0 0 1-.42-.228.71.71 0 0 1-.118-.164.28.28 0 0 1-.041-.177c.015-.108.104-.164.191-.195a.866.866 0 0 1 .307-.04zm9.06 7.343l-.003.001c-.147.053-.268.075-.37.12a.452.452 0 0 0-.239.214c-.063.115-.117.319-.101.666a.51.51 0 0 0 .148.07c.171.052.458.086.778.081.638-.007 1.423-.156 1.84-.35a3.95 3.95 0 0 0 .943-.615h-.001c-1.393.288-2.18.211-2.663.012a1.315 1.315 0 0 1-.332-.2zm-8.031.094h-.021c-.053.005-.13.023-.279.188-.348.39-.47.635-.757.864-.287.228-.66.35-1.405.503-.236.048-.371.101-.461.144.029.024.026.03.07.053.109.06.249.113.362.142.32.08.846.173 1.395.08.549-.094 1.12-.357 1.607-1.04.084-.118.093-.292.024-.479-.07-.187-.223-.348-.331-.393a.653.653 0 0 0-.204-.06z">
+              </path>
+            </g>
+          </svg>
+          <h3 class="text-xl text-center font-bold">PostgreSQL</h3>
+        </div>
+        <div class="group social-button w-full flex items-center justify-center flex-col gap-4">
+          <i class="fab fa-docker fa-4x group-hover:text-blue-400 transition-all duration-200 ease-in"></i>
+          <h3 class="text-xl text-center font-bold">Docker</h3>
+        </div>
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <i class="fab fa-git-alt fa-4x group-hover:text-orange-600 transition-all duration-200 ease-in"></i>
+          <h3 class="text-xl text-center font-bold">Git</h3>
+        </div>
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <svg fill="currentColor" class="h-16 w-16 group-hover:text-blue-500 transition-all duration-200 ease-in"
+            viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M28,25.6l-5.9,2.4l-9.7-9.6l-6.1,4.8L4,21.9V10.1l2.3-1.2l6.1,4.8L22.1,4L28,6.4V25.6z M15.7,16l6.3,5l0,0V11L15.7,16 L15.7,16z M6.3,19.7L6.3,19.7L10,16l-3.6-3.7l0,0L6.3,19.7L6.3,19.7z">
+              </path>
+            </g>
+          </svg>
+          <h3 class="text-xl text-center font-bold">VS Code</h3>
+        </div>
+        <div class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4">
+          <svg fill="currentColor" class="h-16 w-16 group-hover:text-blue-400 transition-all duration-200 ease-in"
+            viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>Arduino</title>
+              <path
+                d="M30.258 9.777h0.075c0.087 0 0.125-0.012 0.125-0.087 0-0.062-0.038-0.087-0.125-0.087h-0.087v0.175zM30.233 10.152h-0.125v-0.65l0.25-0.012c0.010-0.001 0.023-0.001 0.035-0.001 0.069 0 0.134 0.014 0.193 0.040l-0.003-0.001c0.045 0.025 0.075 0.072 0.075 0.126 0 0.004-0 0.008-0 0.012l0-0.001c0 0.075-0.050 0.125-0.137 0.137 0.062 0.025 0.087 0.075 0.112 0.162l0.038 0.162h-0.15c-0.025-0.025-0.025-0.087-0.050-0.162-0.025-0.063-0.050-0.087-0.137-0.087h-0.062l-0.025 0.275zM29.859 9.827c-0 0.004-0 0.009-0 0.014 0 0.268 0.218 0.486 0.486 0.486 0.005 0 0.010-0 0.015-0l-0.001 0c0.265-0.014 0.475-0.232 0.475-0.5s-0.21-0.486-0.474-0.5l-0.001-0c-0.013-0.001-0.027-0.002-0.042-0.002-0.254 0-0.46 0.206-0.46 0.46 0 0.015 0.001 0.029 0.002 0.044l-0-0.002zM30.996 9.827c0 0.004 0 0.010 0 0.015 0 0.344-0.279 0.624-0.624 0.624-0.014 0-0.027-0-0.041-0.001l0.002 0c-0.008 0-0.016 0.001-0.025 0.001-0.348 0-0.63-0.279-0.637-0.625v-0.001c0.008-0.36 0.301-0.649 0.662-0.65h0c0.009-0.001 0.020-0.001 0.032-0.001 0.348 0 0.631 0.282 0.631 0.631 0 0.003-0 0.005-0 0.008v-0zM23.923 16.737h1.487v-1.45h-1.5v-1.487h-1.412v1.5h-1.5v1.437h1.5v1.475h1.437v-1.462zM6.265 16.737h4.424v-1.45h-4.411v1.45zM17.25 16c1.037-2.222 2.974-3.876 5.328-4.511l0.058-0.013c0.194-0.033 0.418-0.052 0.646-0.052 0.045 0 0.090 0.001 0.135 0.002l-0.007-0c0.041-0.001 0.090-0.002 0.139-0.002 2.552 0 4.628 2.034 4.697 4.569l0 0.006c-0.083 2.544-2.165 4.575-4.721 4.575-0.036 0-0.072-0-0.108-0.001l0.005 0c-0.25 0-0.525-0.025-0.775-0.050-2.41-0.652-4.345-2.305-5.365-4.473l-0.021-0.050zM9.102 20.499c-0.197 0.033-0.425 0.052-0.657 0.052-0.046 0-0.092-0.001-0.137-0.002l0.007 0c-0.030 0.001-0.066 0.001-0.102 0.001-2.554 0-4.633-2.032-4.709-4.568l-0-0.007c0.083-2.544 2.165-4.575 4.721-4.575 0.036 0 0.072 0 0.108 0.001l-0.005-0c0.25 0 0.525 0.025 0.787 0.050 2.417 0.639 4.356 2.296 5.365 4.473l0.021 0.050c-1.025 2.23-2.967 3.889-5.329 4.511l-0.057 0.013zM30.771 16c-0.077-3.93-3.28-7.087-7.222-7.087-0.044 0-0.089 0-0.133 0.001l0.007-0c-0.362 0-0.75 0.025-1.125 0.062-2.731 0.545-5.004 2.178-6.387 4.42l-0.024 0.042c-1.423-2.273-3.694-3.902-6.36-4.45l-0.063-0.011c-0.375-0.037-0.75-0.062-1.125-0.062-0.034-0.001-0.074-0.001-0.114-0.001-3.941 0-7.145 3.156-7.222 7.079l-0 0.007c0.077 3.93 3.281 7.086 7.222 7.086 0.040 0 0.080-0 0.12-0.001l-0.006 0c0.406-0.001 0.805-0.028 1.196-0.080l-0.047 0.005c2.734-0.539 5.011-2.169 6.399-4.407l0.024-0.041c1.42 2.275 3.693 3.905 6.36 4.45l0.063 0.011c0.387 0.037 0.75 0.062 1.137 0.062 0.023 0 0.049 0 0.076 0 3.941 0 7.145-3.156 7.221-7.079l0-0.007z">
+              </path>
+            </g>
+          </svg>
+          <h3 class="text-xl text-center font-bold">Arduino</h3>
+        </div>
+        <div
+          class="group social-button w-full h-40 flex items-center justify-center flex-col gap-4 col-span-2 md:col-span-1">
+          <svg fill="currentColor" class="h-16 w-16 group-hover:text-emerald-500 transition-all duration-200 ease-in"
+            viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>LaTeX icon</title>
+              <path
+                d="M2.176 2.813c.233.42.477.779.73 1.09h-.002a2.313 2.313 0 0 0-.357-.026 2.702 2.702 0 0 0-.791.13c.494.415.912.717 1.281.95.905.294 1.912.782 2.77 1.328.429.273.812.543 1.113.78.301.236.567.471.621.574.054.102-.001.139-.082.06-.081-.078-.302-.319-.6-.553a14.203 14.203 0 0 0-1.107-.775c-.775-.49-1.982-.96-2.715-1.414-.57-.182-1.182-.207-1.902.135.526.33.967.568 1.353.746 1.104.155 2.259.695 3.225 1.308.483.308.905.616 1.22.868.158.125.29.237.39.328.098.09.176.155.198.21.03.074-.02.104-.085.057-.032-.022-.085-.102-.182-.191a7.475 7.475 0 0 0-.385-.326c-.312-.25-.73-.553-1.21-.858-.894-.561-2.233-1.012-3.175-1.396-.601-.11-1.223-.06-1.904.389.449.2.837.35 1.182.464-.566.02-1.128.197-1.676.717.477.118.885.198 1.244.25-.44.09-.87.3-1.289.72.324.07.616.123.883.163-.329.159-.64.406-.924.783.373.03.703.042 1 .043-.36.166-.696.428-.996.85.533.026.979.024 1.363.002-.422.172-.812.464-1.144.969a11.66 11.66 0 0 0 1.629-.077l-.008.002c.99-.073 2.3.127 2.965.848.052.057-.024.118-.073.074-.648-.58-1.494-.827-2.892-.922-.544.15-1.047.447-1.461 1.075.535.007.981-.011 1.365-.047-.47.255-.871.643-1.137 1.304.483-.091.888-.19 1.237-.293-.363.265-.669.636-.873 1.194.324-.072.611-.146.87-.221a2.52 2.52 0 0 0-.513 1.096c.351-.13.655-.256.926-.38h.002c.283-.23.71-.457 1.289-.622.506-.145 1.082-.284 1.652-.301a3.63 3.63 0 0 1 .244 0c.1.003.063.104.006.103-.728-.008-1.302.132-1.873.295a9.8 9.8 0 0 0-1.318.526 2.5 2.5 0 0 0-.551 1.191c.495-.198.899-.388 1.238-.568-.311.333-.543.76-.635 1.357a11.794 11.794 0 0 0 1.442-.744c-.432.362-.764.844-.879 1.588a10.81 10.81 0 0 0 1.766-.957c-.184.372-.281.807-.235 1.35.762-.585 1.245-1.056 1.604-1.473a2.67 2.67 0 0 0 .076.885c.449-.772.897-1.093 1.353-1.358-.563.37-.464.671-.464 1.014.683-.72 1.636-1.483 1.927-1.961-.39.585-.547 1.14-.65 1.629-1.994 1.055-3.21 1.33-4.57 1.752.528.194 1.095.383.861.652l-.625.623c.399-.124.805-.3 1.158-.058-.034.327-.448.493-.8.683.62-.224.756-.173.92-.12.08.391-.203.602-.387.86 1.565-1.19 3.606-2.128 5.045-2.521 2.022-.681 4.632-1.39 5.341-3.117.235-.946.478-1.905.707-2.842-.111-.035-.245-.063-.35-.133a.655.655 0 0 1-.234-.299c-.252.066-.441.031-.56-.088-.118-.117-.168-.294-.203-.49-.204.042-.364.017-.47-.076-.114-.102-.17-.26-.198-.443l-.006-.041.037-.014a.84.84 0 0 0 .3-.195.256.256 0 0 0 .071-.225l-.006-.037.03-.016c.163-.093.346-.168.43-.279a.277.277 0 0 0 .05-.21.886.886 0 0 0-.154-.36l-.028-.04.04-.027c.118-.09.246-.176.31-.257.032-.041.046-.077.045-.11 0-.033-.015-.071-.065-.119l-.097-.094.135.006c.212.009.396-.006.539-.053a.5.5 0 0 0 .296-.224.455.455 0 0 1-.005-.074.455.455 0 0 1 .455-.455.455.455 0 0 1 .455.455.455.455 0 0 1-.022.132c.184.016.359.008.524-.064l.037-.012c.236-.084.333.045.72-.459-1.69-2.191-4.158-.632-4.978 1.625-.21.577-1.405.577-1.752-.002-1.37-2.95-5.531-6.067-9.072-7.216zm.732 1.091c.252-.009 1.13.453 1.31.52a23.6 23.6 0 0 1 1.567.967c.505.336.961.663 1.274.902.156.12.277.218.351.285.037.034.064.057.08.082a.079.079 0 0 1 .01.022.056.056 0 0 1-.004.045c-.01.02-.03.03-.043.03a.075.075 0 0 1-.027 0c-.057.001-.202-.163-.496-.415a23.427 23.427 0 0 0-2.758-1.826c-.504-.28-.956-.54-1.264-.612zM1.766 6.691c.812 0 1.89.365 2.931.92C5.74 8.168 6.74 8.83 7.223 9.39c.066.076-.019.123-.077.068-.52-.496-1.462-1.206-2.498-1.758-.637-.336-2.148-1.005-2.882-1.008zm-.428.967c1.116.015 2.348.446 3.432.996.541.275 1.024.57 1.396.832.372.263.673.523.734.657.062.133-.019.13-.086.054a4.404 4.404 0 0 0-.705-.627 11.496 11.496 0 0 0-1.384-.824c-.963-.482-2.284-.926-3.387-1.088zm.162.815c.066-.003.133 0 .201.006.822.071 1.719.366 2.533.748 1.087.509 2.035 1.157 2.434 1.666.035.045-.011.133-.078.064-.428-.44-1.32-1.132-2.397-1.637C3.28 8.9 1.91 8.45.93 8.541c.188-.024.373-.061.57-.068zm16.541.013c-.365.475-.53.425-.701.465.093.431.35.587.586.772 2.02-.372 4.29-.274 6.08-.225l-5.963-1.01-.002-.002zm-.803.494c-.19.077-.387.079-.584.06a.455.455 0 0 1-.39.224.455.455 0 0 1-.414-.268.616.616 0 0 1-.301.21 1.57 1.57 0 0 1-.492.054c.02.035.054.067.054.103a.275.275 0 0 1-.07.174c-.073.093-.188.172-.295.25a.946.946 0 0 1 .149.361.388.388 0 0 1-.07.284c-.106.14-.287.211-.438.295a.374.374 0 0 1-.092.267.886.886 0 0 1-.297.197c.027.157.074.283.154.354.086.076.212.104.426.049l.055-.016.01.055c.034.207.088.386.187.484.1.099.243.135.502.055l.049-.016.015.05a.53.53 0 0 0 .21.282c.087.06.25.112.36.147.798-.868 1.525-1.772 1.884-2.86-.225-.176-.508-.335-.612-.795zM1.44 9.348a6.683 6.683 0 0 1 2.77.64c.92.43 1.658.939 1.975 1.307.074.087-.02.122-.073.074a8.186 8.186 0 0 0-1.947-1.29c-.904-.416-2.196-.646-3.16-.718.145-.01.29-.014.435-.013zm.432.816c.61.02 1.24.155 1.807.352.756.262 1.42.614 1.746.98.044.05-.005.13-.072.07-.349-.304-.962-.694-1.707-.953-.575-.195-1.616-.367-2.27-.396.196-.021.293-.06.496-.053zm.893 1.781c.05 0 .103.004.156.008.424.034.886.133 1.342.406.043.026.049.136-.05.09-.856-.402-1.327-.489-2.458-.308.338-.113.652-.199 1.01-.196zm.416.784c.3.004.613.062.998.216.044.018.08.126-.033.094-.857-.243-1.167-.328-2.288.104.281-.229.62-.367 1.022-.403.1-.009.2-.013.3-.011zm1.459.681c.156 0 .311.009.46.026.053.005.055.102-.007.1a7.9 7.9 0 0 0-1.838.114c-.243.046-.422.044-1.404.46.286-.234.795-.451 1.386-.56.444-.08.934-.142 1.403-.14zm1.336.906c.035-.005.105.084.017.1-.73.136-1.244.268-1.795.455-.216.074-.579.207-1.242.588.259-.269.655-.494 1.213-.684a10.65 10.65 0 0 1 1.807-.459zm.31.508c.075-.012.099.087.022.102-1.217.24-1.76.556-2.541 1.144.503-.523 1.296-1.05 2.52-1.246zm.596.447a.095.095 0 0 1 .03 0c.06.011.069.089-.009.1-.872.13-1.479.555-2.257 1.332.295-.494 1.006-1.242 2.236-1.432zm.371.391c.046-.005.116.073.025.1-.193.056-.433.15-.67.3-.182.118-.302.202-.6.508.112-.245.299-.435.546-.591.246-.157.507-.293.699-.317z">
+              </path>
+            </g>
+          </svg>
+          <h3 class="text-xl text-center font-bold">LaTeX</h3>
+        </div>
+      </div>
+    </section>
+    <hr class="mt-6 border-gray-500 dark:border-gray-500" />
+    <footer class="mb-8">
+      <div class="flex items-center justify-center mb-6">
+        <p class="text-sm font-semibold text-gray-600 dark:text-gray-400">
+          &copy; 2024 All rights reserved | Built Using
+          <span class="text-blue-600 dark:text-blue-400">Tailwind CSS</span>
+        </p>
+      </div>
+    </footer>
+  </container>
+
+  <script src="./static/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+</body>
+
 </html>
