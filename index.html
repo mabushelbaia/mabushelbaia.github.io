@@ -32,163 +32,27 @@
     })();
   </script>
 
-  <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    /* offset anchor targets so the sticky header never covers a section heading */
-    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-    a { text-decoration: none; color: inherit; }
-
-    :root {
-      --bg:#f4f2ec; --surface:#ffffff; --surface2:#faf8f2;
-      --fg:#1b1b20; --muted:#6b6b73; --border:#e4e1d8; --accent:#d75a00;
-    }
-    html.dark {
-      --bg:#141417; --surface:#1a1a1f; --surface2:#202027;
-      --fg:#e8e8ea; --muted:#9a9aa2; --border:#2c2c33; --accent:#ff8200;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'JetBrains Mono', monospace;
-      min-height: 100vh;
-      transition: background-color .3s ease, color .3s ease;
-    }
-    body, body * { transition: background-color .3s ease, border-color .3s ease, color .3s ease; }
-
-    @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
-    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
-    @keyframes scrollup { from { transform:translateY(0); } to { transform:translateY(-50%); } }
-    @keyframes drift {
-      0%{transform:translate(0,0)} 33%{transform:translate(-20vw,14vh)}
-      66%{transform:translate(13vw,-10vh)} 100%{transform:translate(0,0)}
-    }
-
-    .glow {
-      position: fixed; top: 4%; left: 56%;
-      width: 540px; height: 540px; max-width: 86vw;
-      border-radius: 50%; background: var(--accent);
-      opacity: .17; filter: blur(90px);
-      z-index: 0; pointer-events: none;
-      animation: drift 20s ease-in-out infinite;
-    }
-    .hexwrap {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-      opacity: .08;
-      -webkit-mask-image: linear-gradient(110deg,#000 30%,transparent 75%), linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);
-      -webkit-mask-composite: source-in;
-      mask-image: linear-gradient(110deg,#000 30%,transparent 75%), linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);
-      mask-composite: intersect;
-    }
-    .hexwrap pre {
-      margin: 0; padding: 14px 18px;
-      font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.55;
-      color: var(--accent); white-space: pre;
-      animation: scrollup 55s linear infinite;
-    }
-
-    header.nav {
-      position: sticky; top: 0; z-index: 20;
-      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-      padding: 12px clamp(16px,4vw,30px);
-      background: var(--surface2); border-bottom: 1px solid var(--border);
-    }
-    .lights { display: flex; gap: 7px; align-items: center; }
-    .lights span { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
-    .winlabel { font-size: 13px; color: var(--muted); }
-    nav.links { margin-left: auto; display: flex; gap: 18px; align-items: center; font-size: 13px; }
-    nav.links a { color: var(--muted); position: relative; padding-bottom: 2px; }
-    nav.links a::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
-      background: var(--accent); transform: scaleX(0); transform-origin: left;
-      transition: transform .2s ease;
-    }
-    nav.links a:hover { color: var(--accent); }
-    nav.links a:hover::after,
-    nav.links a.active::after { transform: scaleX(1); }
-    nav.links a.active { color: var(--fg); }
-
-    .toggle {
-      cursor: pointer; font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; font-weight: 600; letter-spacing: .5px;
-      color: var(--fg); background: var(--surface); border: 1px solid var(--border);
-      border-radius: 7px; padding: 7px 11px; display: flex; align-items: center; gap: 7px;
-    }
-    .toggle:hover { border-color: var(--accent); }
-    .toggle .swatch {
-      width: 11px; height: 11px; border-radius: 50%;
-      background: linear-gradient(90deg, var(--fg) 50%, transparent 50%);
-      border: 1px solid var(--muted); display: inline-block;
-    }
-
-    main {
-      position: relative; z-index: 1;
-      max-width: 840px; margin: 0 auto;
-      padding: clamp(34px,6vw,72px) clamp(18px,5vw,32px) 60px;
-    }
-    .prompt { color: var(--accent); }
-    .caret {
-      display: inline-block; width: 8px; height: 16px; background: var(--accent);
-      vertical-align: -3px; margin-left: 2px; animation: blink 1.1s step-end infinite;
-    }
-    h1.name {
-      font-size: clamp(32px,6.5vw,52px); font-weight: 700; letter-spacing: -1px;
-      line-height: 1.05; margin: 0 0 10px; color: var(--fg);
-    }
-    .role { font-size: clamp(14px,2.4vw,16px); color: var(--accent); margin-bottom: 22px; }
-    .bio {
-      font-family: 'IBM Plex Sans', sans-serif; font-size: clamp(15px,2.4vw,17px);
-      line-height: 1.75; color: var(--muted); max-width: 580px; margin: 0 0 26px;
-    }
-    .contacts { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13.5px; }
-    .contacts a { color: var(--fg); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
-    .contacts a:hover { color: var(--accent); }
-
-    section.block { margin-top: clamp(40px,7vw,68px); }
-    .cmd { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-
-    .proj {
-      display: block; padding: 18px 16px; margin: 0 -16px;
-      border-radius: 8px; border-bottom: 1px solid var(--border);
-      transition: background-color .2s ease, transform .18s ease;
-    }
-    .proj:hover { background: var(--surface); transform: translateX(6px); }
-    .proj .top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-    .proj .title { font-size: clamp(15px,2.6vw,17px); font-weight: 600; color: var(--fg); }
-    .proj .num { color: var(--accent); }
-    .proj .host { font-size: 11px; color: var(--muted); flex: none; }
-    .proj .desc {
-      font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; line-height: 1.6;
-      color: var(--muted); margin: 8px 0 11px; max-width: 560px;
-    }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
-    .tags span { font-size: 10.5px; color: var(--muted); border: 1px solid var(--border); border-radius: 3px; padding: 2px 8px; }
-
-    .about-text {
-      font-family: 'IBM Plex Sans', sans-serif; font-size: clamp(15px,2.4vw,16px);
-      line-height: 1.8; color: var(--muted); max-width: 600px; margin: 0;
-    }
-
-    footer.foot {
-      position: relative; z-index: 1; background: var(--bg);
-      border-top: 1px solid var(--border); padding: 24px clamp(18px,5vw,32px);
-      display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;
-      max-width: 840px; margin: 0 auto; font-size: 12px; color: var(--muted);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .glow, .hexwrap pre, .caret, [style*="rise"] { animation: none !important; }
-      nav.links a::after { transition: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- background graphics -->
   <div class="glow" aria-hidden="true"></div>
   <div class="hexwrap" aria-hidden="true"><pre id="hexdump"></pre></div>
+  <div id="scanlines" aria-hidden="true"></div>
+
+  <div id="serial" aria-hidden="true">
+    <div id="serialBar">
+      <span class="sdot"></span>
+      <span class="stitle">/dev/ttyUSB0 · 115200 8N1 · cortex-m4</span>
+      <span class="sclose">[ ESC ] detach</span>
+    </div>
+    <div id="serialOut"></div>
+    <div id="serialInput">
+      <span class="sprompt">mabushelbaia@cortex-m4:~$</span>
+      <span id="serialLine"></span>
+    </div>
+  </div>
 
   <!-- nav -->
   <header class="nav">
@@ -198,6 +62,17 @@
       <span style="background:var(--border);"></span>
     </div>
     <span class="winlabel">mabushelbaia@cortex-m4 — zsh</span>
+    <span class="konami-hint">
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 2L2 14h12z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 2L2 14h12z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 2 8 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 2 8 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 8L14 2 14 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 8 2 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 8L14 2 14 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 8 2 14z" fill="currentColor"/></svg></kbd>
+      <kbd>B</kbd><kbd>A</kbd>
+    </span>
     <nav class="links">
       <a href="#work">work</a>
       <a href="#about">about</a>
@@ -217,7 +92,7 @@
       <div class="role">Computer Engineer · Embedded Systems</div>
       <p class="bio">I'm a computer engineer focused on embedded systems and low-level software — microcontrollers, assembly, and a bit of systems and security. Birzeit University graduate and teaching assistant.</p>
       <div class="contacts" id="contact">
-        <a href="/cdn-cgi/l/email-protection#5a373b382f29323f36383b333b1a3d373b333674393537">email</a>
+        <a href="mailto:mabushelbaia@gmail.com">email</a>
         <a href="https://github.com/mabushelbaia" target="_blank" rel="noopener noreferrer">github</a>
         <a href="https://www.linkedin.com/in/mabushelbaia/" target="_blank" rel="noopener noreferrer">linkedin</a>
         <a href="https://leetcode.com/mabushelbaia/" target="_blank" rel="noopener noreferrer">leetcode</a>
@@ -243,125 +118,7 @@
     <span>Ramallah · Palestine</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ---- data ----
-    var projects = [
-      { num:'01', title:'Microprocessor Lab', host:'encs4110.me',
-        href:'https://encs4110.me',
-        desc:'A learning platform for microprocessor and embedded programming, with hands-on tutorials and code for the TM4C123 and ARM Cortex-M4.',
-        tags:['Embedded','TM4C123','ARM Cortex-M4','Education'] },
-      { num:'02', title:'PIC16F877A Calculator', host:'github',
-        href:'https://github.com/mabushelbaia/PIC16F877A-Calculator',
-        desc:'A calculator written in PIC assembly for the PIC16F877A, driving a 16×2 LCD and simulated in Proteus.',
-        tags:['Assembly','PIC16F877A','LCD','Proteus'] },
-      { num:'03', title:'Padding Oracle Attack', host:'github',
-        href:'https://github.com/mabushelbaia/Padding-Oracle-Attack',
-        desc:'A practical padding-oracle attack on CBC with PKCS#5, recovering plaintext byte by byte — packaged to run in Docker.',
-        tags:['Security','Cryptography','CBC','Docker'] },
-      { num:'04', title:'Course Schedule', host:'github',
-        href:'https://github.com/mabushelbaia/Course-Schedule',
-        desc:'A small Python tool that scrapes the weekly schedule from Ritaj and exports a calendar file you can import anywhere.',
-        tags:['Python','iCalendar','Scraping'] }
-    ];
-
-    // ---- render projects ----
-    (function () {
-      var html = '';
-      for (var i = 0; i < projects.length; i++) {
-        var p = projects[i];
-        var tags = '';
-        for (var j = 0; j < p.tags.length; j++) tags += '<span>' + p.tags[j] + '</span>';
-        html += '<a class="proj" href="' + p.href + '" target="_blank" rel="noopener noreferrer">' +
-                  '<div class="top">' +
-                    '<span class="title"><span class="num">' + p.num + '</span>&nbsp;&nbsp;' + p.title + '</span>' +
-                    '<span class="host">' + p.host + ' \u2197</span>' +
-                  '</div>' +
-                  '<div class="desc">' + p.desc + '</div>' +
-                  '<div class="tags">' + tags + '</div>' +
-                '</a>';
-      }
-      document.getElementById('projects').innerHTML = html;
-    })();
-
-    // ---- hexdump background ----
-    (function () {
-      var src = 'mabushelbaia :: computer engineer :: embedded systems :: ARM Cortex-M4 :: TM4C123 :: PIC16F877A :: assembly :: low-level :: systems :: ';
-      var N = 16 * 80, bytes = [];
-      for (var i = 0; bytes.length < N; i++) bytes.push(src.charCodeAt(i % src.length));
-      var out = '';
-      for (var r = 0; r < N / 16; r++) {
-        var off = (r * 16).toString(16).toUpperCase();
-        while (off.length < 6) off = '0' + off;
-        var hex = '', asc = '';
-        for (var c = 0; c < 16; c++) {
-          var b = bytes[r * 16 + c];
-          var h = b.toString(16).toUpperCase(); if (h.length < 2) h = '0' + h;
-          hex += h + ' ';
-          asc += (b >= 32 && b < 127) ? String.fromCharCode(b) : '.';
-        }
-        out += '0x' + off + '   ' + hex + '  ' + asc + '\n';
-      }
-      document.getElementById('hexdump').textContent = out + out;
-    })();
-
-    // ---- typing animation ----
-    (function () {
-      var full = 'whoami', el = document.getElementById('typed'), i = 0;
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) { el.textContent = full; return; }
-      var t = setInterval(function () {
-        i++; el.textContent = full.slice(0, i);
-        if (i >= full.length) clearInterval(t);
-      }, 75);
-    })();
-
-    // ---- theme toggle (persists in color-theme, shared with old site) ----
-    (function () {
-      var btn = document.getElementById('themeToggle');
-      var label = document.getElementById('themeLabel');
-      function sync() {
-        label.textContent = document.documentElement.classList.contains('dark') ? 'DARK' : 'LIGHT';
-      }
-      sync();
-      btn.addEventListener('click', function () {
-        var dark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('color-theme', dark ? 'dark' : 'light');
-        sync();
-      });
-    })();
-
-    // ---- highlight the nav link for the section you're viewing ----
-    (function () {
-      var line = 104; // matches scroll-padding-top (96px) + small buffer
-      var entries = Array.prototype.slice
-        .call(document.querySelectorAll('nav.links a[href^="#"]'))
-        .map(function (a) { return { link: a, el: document.getElementById(a.getAttribute('href').slice(1)) }; })
-        .filter(function (e) { return e.el; })
-        .sort(function (a, b) { return a.el.offsetTop - b.el.offsetTop; });
-      if (!entries.length) return;
-
-      var ticking = false;
-      function update() {
-        ticking = false;
-        var current = null;
-        // viewport-relative top avoids offsetParent quirks under position:relative main
-        for (var i = 0; i < entries.length; i++) {
-          if (entries[i].el.getBoundingClientRect().top <= line) current = entries[i];
-        }
-        // pin the last section once scrolled to the very bottom
-        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
-          current = entries[entries.length - 1];
-        }
-        for (var j = 0; j < entries.length; j++) {
-          entries[j].link.classList.toggle('active', entries[j] === current);
-        }
-      }
-      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      update();
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
