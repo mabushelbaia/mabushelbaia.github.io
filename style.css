@@ -19,7 +19,6 @@ body {
   min-height: 100vh;
   transition: background-color .3s ease, color .3s ease;
 }
-body, body * { transition: background-color .3s ease, border-color .3s ease, color .3s ease; }
 
 @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
 @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
@@ -99,6 +98,7 @@ main {
 h1.name {
   font-size: clamp(32px,6.5vw,52px); font-weight: 700; letter-spacing: -1px;
   line-height: 1.05; margin: 0 0 10px; color: var(--fg);
+  transition: text-shadow .3s ease;
 }
 .role { font-size: clamp(14px,2.4vw,16px); color: var(--accent); margin-bottom: 22px; }
 .bio {
@@ -149,7 +149,6 @@ footer.foot {
 }
 #scanlines {
   position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0;
-  transition: opacity .45s ease;
   background:
     repeating-linear-gradient(0deg, rgba(0,0,0,0.30) 0px, rgba(0,0,0,0.30) 1px, transparent 1px, transparent 3px);
   box-shadow: inset 0 0 220px rgba(0,0,0,0.92);
