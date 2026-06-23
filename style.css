@@ -163,8 +163,10 @@ body.debug h1.name { text-shadow: 2px 0 rgba(255,0,60,.7), -2px 0 rgba(0,255,247
 /* ---- persistent Konami hint in nav ---- */
 .konami-hint {
   display: inline-flex; gap: 1px; align-items: center;
-  margin: 0 12px;
+  margin: 0 12px; opacity: .18;
+  transition: opacity .25s ease;
 }
+.konami-hint:hover { opacity: 1; }
 .konami-hint kbd {
   display: inline-flex; align-items: center; justify-content: center;
   width: 20px; height: 20px;
