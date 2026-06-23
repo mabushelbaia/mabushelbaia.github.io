@@ -1,0 +1,6 @@
+# LaTeX build output — the published copy lives at ../mabushelbaia_cv.pdf
+main.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
