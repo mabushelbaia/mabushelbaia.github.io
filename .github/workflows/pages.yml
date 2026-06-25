@@ -1,0 +1,59 @@
+name: Deploy versioned Pages site
+
+on:
+  push:
+    branches: [main, v1, v2]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (current site, served at /)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: _site
+
+      - name: Checkout v1 (served at /v1/)
+        uses: actions/checkout@v4
+        with:
+          ref: v1
+          path: _v1
+
+      - name: Checkout v2 (served at /v2/)
+        uses: actions/checkout@v4
+        with:
+          ref: v2
+          path: _v2
+
+      - name: Assemble combined site
+        run: |
+          mkdir -p _site/v1 _site/v2
+          rsync -a --exclude='.git' --exclude='.github' --exclude='.gitignore' --exclude='.vscode' --exclude='README.md' --exclude='CNAME' _v1/ _site/v1/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='.gitignore' --exclude='.vscode' --exclude='README.md' --exclude='CNAME' _v2/ _site/v2/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
