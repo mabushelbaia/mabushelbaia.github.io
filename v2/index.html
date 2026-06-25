@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFZ9JJD4W8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-NFZ9JJD4W8');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mohammad Abu-Shelbaia — Computer Engineer focused on embedded systems and low-level software." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <title>mabushelbaia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- set theme before paint to avoid flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem("color-theme");
+      if (t === "light") document.documentElement.classList.remove("dark");
+      else document.documentElement.classList.add("dark");
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- background graphics -->
+  <div class="glow" aria-hidden="true"></div>
+  <div class="hexwrap" aria-hidden="true"><pre id="hexdump"></pre></div>
+  <div id="scanlines" aria-hidden="true"></div>
+
+  <div id="serial" aria-hidden="true">
+    <div id="serialBar">
+      <span class="sdot"></span>
+      <span class="stitle">/dev/ttyUSB0 · 115200 8N1 · cortex-m4</span>
+      <span class="sclose">[ ESC ] detach</span>
+    </div>
+    <div id="serialOut"></div>
+    <div id="serialInput">
+      <span class="sprompt">mabushelbaia@cortex-m4:~$</span>
+      <span id="serialLine"></span>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <header class="nav">
+    <div class="lights">
+      <span style="background:var(--accent);"></span>
+      <span style="background:var(--border);"></span>
+      <span style="background:var(--border);"></span>
+    </div>
+    <span class="winlabel">mabushelbaia@cortex-m4 — zsh</span>
+    <span class="konami-hint">
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 2L2 14h12z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 2L2 14h12z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 2 8 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 2 8 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 8L14 2 14 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 8 2 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 8L14 2 14 14z" fill="currentColor"/></svg></kbd>
+      <kbd><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 2L14 8 2 14z" fill="currentColor"/></svg></kbd>
+      <kbd>B</kbd><kbd>A</kbd>
+    </span>
+    <nav class="links">
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <button id="themeToggle" class="toggle" type="button" aria-label="Toggle theme">
+        <span class="swatch"></span><span id="themeLabel">DARK</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section style="animation:rise .55s cubic-bezier(.2,.7,.2,1) both;">
+      <div class="cmd" style="font-size:14px;margin-bottom:18px;">
+        <span class="prompt">mabushelbaia@cortex-m4</span> ~ % <span id="typed"></span><span class="caret"></span>
+      </div>
+      <h1 class="name">Mohammad Abu-Shelbaia</h1>
+      <div class="role">Computer Engineer · Embedded Systems</div>
+      <p class="bio">I'm a computer engineer focused on embedded systems and low-level software — microcontrollers, assembly, and a bit of systems and security. Birzeit University graduate and teaching assistant.</p>
+      <div class="contacts" id="contact">
+        <a href="mailto:mabushelbaia@gmail.com">email</a>
+        <a href="https://github.com/mabushelbaia" target="_blank" rel="noopener noreferrer">github</a>
+        <a href="https://www.linkedin.com/in/mabushelbaia/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        <a href="https://leetcode.com/mabushelbaia/" target="_blank" rel="noopener noreferrer">leetcode</a>
+        <a href="mabushelbaia_cv.pdf" target="_blank" rel="noopener noreferrer">cv.pdf</a>
+      </div>
+    </section>
+
+    <!-- work -->
+    <section id="work" class="block" style="animation:rise .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.12s;">
+      <div class="cmd"><span class="prompt">mabushelbaia@cortex-m4</span> ~ % ls projects/</div>
+      <div id="projects"></div>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="block" style="animation:rise .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:.2s;">
+      <div class="cmd" style="margin-bottom:14px;"><span class="prompt">mabushelbaia@cortex-m4</span> ~ % cat about.txt</div>
+      <p class="about-text">I graduated in Computer Engineering from Birzeit University and now work there as a teaching assistant. Outside of coursework I build small embedded and systems projects — the kind where you get to see exactly what the machine is doing, from microcontroller registers up to a server answering a request.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Mohammad Abu-Shelbaia</span>
+    <span>Ramallah · Palestine</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
