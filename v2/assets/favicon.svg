@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Terminal prompt">
+  <rect width="100" height="100" rx="22" fill="#1a1a1f"/>
+  <g fill="none" stroke="#ff8200" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="27,33 49,50 27,67" stroke-width="12.6"/>
+    <line x1="55.5" y1="66.5" x2="73" y2="66.5" stroke-width="10.4"/>
+  </g>
+</svg>
