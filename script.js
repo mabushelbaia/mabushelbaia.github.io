@@ -1,9 +1,9 @@
 // ---- data ----
 var projects = [
-  { num:'01', title:'Microprocessor Lab', host:'encs4110.me',
-    href:'https://encs4110.me',
-    desc:'A learning platform for microprocessor and embedded programming, with hands-on tutorials and code for the TM4C123 and ARM Cortex-M4.',
-    tags:['Embedded','TM4C123','ARM Cortex-M4','Education'] },
+  { num:'01', title:'ECE Lab Manuals', host:'birzeit.me',
+    href:'https://birzeit.me',
+    desc:'Open lab manuals for Birzeit University\'s ECE labs (ARM Cortex-M4, STM32 and Android), each with step-by-step experiments, setup guides and PDFs.',
+    tags:['Education','Embedded','VitePress','Open source'] },
   { num:'02', title:'PIC16F877A Calculator', host:'github',
     href:'https://github.com/mabushelbaia/PIC16F877A-Calculator',
     desc:'A calculator written in PIC assembly for the PIC16F877A, driving a 16×2 LCD and simulated in Proteus.',
