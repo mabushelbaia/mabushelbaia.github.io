@@ -8,8 +8,8 @@ a { text-decoration: none; color: inherit; }
   --fg:#1b1b20; --muted:#6b6b73; --border:#e4e1d8; --accent:#d75a00;
 }
 html.dark {
-  --bg:#141417; --surface:#1a1a1f; --surface2:#202027;
-  --fg:#e8e8ea; --muted:#9a9aa2; --border:#2c2c33; --accent:#ff8200;
+  --bg:#000000; --surface:#0c0c0e; --surface2:#070708;
+  --fg:#ececee; --muted:#8f8f97; --border:#1f1f24; --accent:#ff8200;
 }
 
 body {
