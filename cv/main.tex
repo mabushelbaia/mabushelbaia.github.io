@@ -23,9 +23,9 @@
 
 \documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
 \usepackage{multicol}
+\usepackage[none]{hyphenat} % No hyphenation, so keywords stay whole for ATS parsers
 \setlength{\columnsep}{0mm}
 %----------------------------------------------------------------------------------------
-\usepackage{lipsum}  
 
 
 \begin{document}
@@ -34,10 +34,14 @@
 %	TITLE AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\begin{minipage}[t]{0.5\textwidth} 
+\begin{minipage}[t]{0.6\textwidth}
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
 	{ \fontsize{16}{20} \textcolor{black}{\textbf{\MakeUppercase{Mohammad Abu-Shelbaia}}}} % First name
+	
+	\vspace{4pt}
+	
+	{\large Computer Engineer \textperiodcentered{} Embedded \& Software}
 	
 	\vspace{6pt}
 	
@@ -45,103 +49,95 @@
  
 	\vspace{6pt}
 	
-{\Large (+970) 059-415-6035} 
+{\Large +970 59 415 6035} 
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.2\textwidth} % 20% of the page width for the first row of icons
+\begin{minipage}[t]{0.31\textwidth} % 31% of the page width for the icons
 	\vspace{-\baselineskip} % Required for vertically aligning mini pages
 	
-	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-	
-\end{minipage}
-\begin{minipage}[t]{0.27\textwidth} % 27% of the page width for the second row of icons
-	\vspace{-\baselineskip} % Required for vertically aligning mini pages
-	
-	\icon{Globe}{11}{\href{http://mabushelbaia.github.io}{mabushelbaia.com}}\\ 
+	\icon{Globe}{11}{\href{https://mabushelbaia.com}{mabushelbaia.com}}\\ 
     \icon{Github}{11}{\href{https://github.com/mabushelbaia}{github.com/mabushelbaia}}\\
+    \icon{Linkedin}{11}{\href{https://www.linkedin.com/in/mabushelbaia/}{linkedin.com/in/mabushelbaia}}\\
     \icon{MapMarker}{11}{Ramallah, Palestine}\\
     
 \end{minipage}
 
 
 %----------------------------------------------------------------------------------------
-%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%	SUMMARY AND SKILLS
 %----------------------------------------------------------------------------------------
 
-\begin{minipage}[t]{0.46\textwidth}
-    \cvsect{Summary}
-    Computer Engineering graduate with excellence from Birzeit University, now a Teaching and Research Assistant there. Focused on embedded systems and low-level software: ARM Cortex-M4, STM32 and assembly. Experienced in Python backend development and automation.
+\cvsect{Summary}
+Computer Engineering graduate from Birzeit University, working across embedded systems and software. Writes bare-metal C and ARM assembly for the TI TM4C123 (ARM Cortex-M4F) and teaches ENCS4110, the Computer Design Lab built on that platform, as a Teaching and Research Assistant. Python backend developer (Django, Flask, Docker, PostgreSQL) with industry experience at Silal; also builds automation tools and the department's lab-manual platform.
+
+\cvsect{Skills}
+\vspace{-6pt}
+
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Languages:}
 \end{minipage}
-\hfill % Whitespace between
-\begin{minipage}[t]{0.465\textwidth}
-    \cvsect{Skills}
-    \vspace{-6pt}
-    
-    \begin{minipage}[t]{0.2\textwidth}
-        \textbf{Languages:}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.73\textwidth}
-        Python, LaTeX, Markdown, Bash, Assembly, Java, C, SQL, HTML, CSS
-    \end{minipage}
-    \vspace{4mm}
-    
-    \begin{minipage}[t]{0.2\textwidth}
-        \textbf{Technologies:}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.73\textwidth}
-        Git, FastAPI, Flask, Asyncio, Django, Tailwind CSS, Docker, PostgreSQL, Arduino, Nginx, Gunicorn
-    \end{minipage}
-    
-    
+\begin{minipage}[t]{0.8\textwidth}
+    C, Python, ARM Assembly, PIC Assembly, SQL, Bash
+\end{minipage}
+\vspace{1mm}
+
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Embedded:}
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+    TI TM4C123 (Cortex-M4F), Bare-metal, Register-level programming, CMSIS, TivaWare, GPIO, Interrupts (NVIC), Timers, PWM, QEI, UART, ADC, LCD
+\end{minipage}
+\vspace{1mm}
+
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Backend \& DevOps:}
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+    Django, Flask, FastAPI, REST APIs, pytest, PostgreSQL, Docker, Nginx, Gunicorn, GitHub Actions
+\end{minipage}
+\vspace{1mm}
+
+\begin{minipage}[t]{0.19\textwidth}
+    \textbf{Tools:}
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+    Git, Linux, Make, arm-none-eabi-gcc, Keil uVision, OpenOCD
 \end{minipage}
 
-% %----------------------------------------------------------------------------------------
-% %	EXPERIENCE
-% %----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
 \cvsect{Experience}
 \begin{entrylist}
 
     \entry
-    {9/2024 -- Present}
-    {Teaching And Research Assistant}
+    {Sep 2024 -- Present}
+    {Teaching and Research Assistant}
     {\href{https://www.birzeit.edu/en}{\textcolor{blue}{Birzeit University}}}
-    {
-        Assisted in delivering laboratory sessions on microcontroller programming and embedded systems. Provided mentorship and support to students, evaluated assignments, and contributed to the preparation of lab materials.
-    }
-    % {\vspace{-10pt}
-    % \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-    %     \item Delivered laboratory sessions on Linux and microcontroller programming with tailored materials.
-    %     \item Provided mentorship and technical guidance to students on assignments and projects.
-    %     \item Developed practical exam scenarios and evaluated student performance.
-    % \end{itemize}}    
+    {\vspace{-10pt}
+    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*]
+        \item Teach 4+ sections per semester of ENCS4110, an ARM Cortex-M4 lab on the TI TM4C123 LaunchPad: GPIO, external and timer interrupts, LCD interfacing and ADC, in C and ARM assembly.
+        \item Wrote the ENCS4110 lab manual used in these sections, published at \href{https://encs4110.birzeit.me}{encs4110.birzeit.me}.
+        \item Prepare practical exam scenarios, mentor students on assignments and projects, and grade their work.
+    \end{itemize}\vspace{-4pt}}
     \entry
-        {7/2024 -- 12/2024}
-        {Backend Developer}
+        {Jul 2024 -- Dec 2024}
+        {Backend Developer (Part-time)}
         {{\href{https://www.silal.app/en}{\textcolor{blue}{Silal}}}}
-        { Contributed to the development and maintenance of a data processing pipeline for managing and analyzing product data. Wrote unit tests to ensure the reliability of Flask API endpoints.}
-        % {\vspace{-10pt}
-        % \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        %     \item Continued developing and maintaining backend services using the Django framework.
-        %     \item Built SEO-friendly product listing pipelines, integrating FastAPI with OpenAI's GPT for content generation.
-        %     \item Deployed containerized services with Docker, maintaining efficient CI/CD pipelines.
-        %     \item Enhanced system performance by optimizing database queries and backend logic.
-        % \end{itemize} }
-    
+        {\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*]
+            \item Developed and maintained a data pipeline for managing and analyzing product data.
+            \item Wrote pytest unit tests for Flask REST API endpoints.
+        \end{itemize}\vspace{-4pt}}
     \entry
-        {3/2024 -- 7/2024}
+        {Mar 2024 -- Jul 2024}
         {Backend Developer Intern}
         {{\href{https://www.silal.app/en}{\textcolor{blue}{Silal}}}}
-        {
-            {Built a full-stack bookstore application using Django and Tailwind CSS, implementing core functionality and an intuitive user interface. Deployed the application with Docker Compose, using Nginx, Gunicorn, and PostgreSQL for a robust and production-ready setup.}  
-        }
-        % {\vspace{-10pt}
-        % \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        %     \item Assisted in building and maintaining backend services using Django and PostgreSQL.
-        %     \item Utilized Docker for containerization, ensuring smooth development and deployment workflows.
-        %     \item Contributed to application styling with Tailwind CSS and integrated backend services with the UI.
-        % \end{itemize}}
+        {\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*]
+            \item Built a full-stack bookstore application with Django and Tailwind CSS.
+            \item Deployed it with Docker Compose behind Nginx and Gunicorn, with PostgreSQL.
+        \end{itemize}\vspace{-4pt}}
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
@@ -153,22 +149,22 @@
         {Web, VitePress \\ PWA, CI/CD}
         {ECE Labs Platform}
         {\href{https://birzeit.me}{\textcolor{blue}{birzeit.me}}}
-        {Web platform that replaces the static PDF lab manuals of the Birzeit ECE department: searchable pages, copy-paste code, and fixes that go live on merge through GitHub Actions. Installable for offline use, with printable PDFs built from LaTeX.}
+        {Web platform that replaces the static PDF lab manuals of the Birzeit ECE department, now hosting three lab courses: searchable pages, copy-paste code, fixes that go live on merge through GitHub Actions, offline install, and printable PDFs built from LaTeX. Includes the ENCS4110 manual, written from scratch.}
     \entry
         {Embedded Systems\\ PIC16F877A, Assembly}
         {PIC16F877A Calculator}
         {\href{https://github.com/mabushelbaia/PIC16F877A-Calculator}{\textcolor{blue}{github.com}}}
-        {Wrote a calculator in PIC assembly for the PIC16F877A, with single-button input and a 16x2 LCD display, designed and simulated in MPLAB and Proteus.}
+        {PIC assembly calculator for the PIC16F877A with single-button input and a 16x2 LCD.}
     \entry
-        {Security, Cryptography \\ CBC, Docker}
-        {Padding Oracle Attack}
-        {\href{https://github.com/mabushelbaia/Padding-Oracle-Attack}{\textcolor{blue}{github.com}}}
-        {Implemented a practical padding oracle attack against CBC mode with PKCS\#5 padding, recovering the plaintext byte by byte, and packaged it to run in Docker.}
+        {Concurrency\\ C, POSIX Threads}
+        {Ants Simulator}
+        {\href{https://github.com/mabushelbaia/Ants-Simulator}{\textcolor{blue}{github.com}}}
+        {Multithreaded C simulation: a POSIX thread per ant, mutex-guarded state, SDL2 graphics.}
     \entry
-        {Web Scraping \\ Python, iCal}
+        {Web Scraping \\ Python, iCalendar}
         {Course Schedule}
         {\href{https://github.com/mabushelbaia/Course-Schedule}{\textcolor{blue}{github.com}}}
-        {Built a Python CLI that logs into Ritaj, fetches the course schedule, and exports recurring iCal events merged with academic calendar dates such as holidays and exam periods.}
+        {Built a Python CLI that logs into Ritaj, fetches the course schedule, and exports recurring iCalendar events merged with holidays and exam periods, detecting the current semester automatically.}
 
 \end{entrylist}
 
@@ -179,32 +175,27 @@
 \cvsect{Education}
 \begin{entrylist}
     \entry
-		{9/2020 - 7/2024}
+		{Sep 2020 -- Jul 2024}
+		{B.Sc. Computer Engineering}
 		{Birzeit University}
-		{Bachelor}
-		{Computer Engineering\\
-        \texttt{Cumulative Average: 87\%}
-    }
-    \entry
-        {28th July 2024}
-        {Udacity}
-        {Nanodegree Certificate}
-        {Data Analyst\\
-        \href{https://www.udacity.com/certificate/e/3aa7c17a-0cbc-11ef-b565-af2bfee1c67d}{\texttt{Certificate Link}}
+		{Graduated with Excellence (87\%)\\
+        Coursework: Real-Time \& Embedded Systems, Microprocessors, Computer Organization, Digital Design (Verilog), Computer Architecture
     }
 \end{entrylist}
 
-
-
-
-
 %----------------------------------------------------------------------------------------
-%	LANGUAGES
+%	CERTIFICATIONS AND SPOKEN LANGUAGES
 %----------------------------------------------------------------------------------------
 \vspace{-10 pt}
-	\cvsect{Languages}
-    \vspace{-6pt}
-    
-    \hspace{26mm} \textbf{English} - \href{https://cert.efset.org/Lymieh}{C2 (CEFR)}, \textbf{ Arabic} - Native
+\cvsect{Certifications \& Languages}
+\begin{entrylist}
+    \entry
+        {Jul 2024}
+        {Data Analyst Nanodegree, Udacity}
+        {\href{https://www.udacity.com/certificate/e/3aa7c17a-0cbc-11ef-b565-af2bfee1c67d}{\textcolor{blue}{Certificate}}}
+        {\vspace{-12pt}}
+\end{entrylist}
+\vspace{-10pt}
+\hspace*{4.6mm}\parbox[t]{0.20\textwidth}{\small Spoken}\parbox[t]{0.75\textwidth}{\textbf{English -- \href{https://cert.efset.org/Lymieh}{C2 (CEFR)}, Arabic -- Native}}
 
 \end{document}
