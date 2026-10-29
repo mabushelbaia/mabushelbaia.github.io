@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <!-- Link-preview image. Render to og.png with Inkscape; needs JetBrains Mono and IBM Plex Sans installed. -->
+  <!-- Link-preview image. Render to og.png with Inkscape or rsvg-convert; needs JetBrains Mono and IBM Plex Sans installed. -->
   <defs>
     <radialGradient id="glow" cx="900" cy="140" r="420" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff8200" stop-opacity=".22"/>
@@ -20,8 +20,8 @@
   <rect x="682" y="92" width="13" height="28" fill="#ff8200"/>
 
   <text x="76" y="318" font-family="JetBrains Mono" font-weight="700" font-size="80" letter-spacing="-2" fill="#ececee">Mohammad Abu-Shelbaia</text>
-  <text x="80" y="384" font-family="JetBrains Mono" font-size="32" fill="#ff8200">Computer Engineer · Embedded Systems</text>
-  <text x="80" y="440" font-family="IBM Plex Sans" font-size="28" fill="#8f8f97">Microcontrollers, assembly and low-level software, plus Python automation.</text>
+  <text x="80" y="384" font-family="JetBrains Mono" font-size="32" fill="#ff8200">Computer Engineer · Embedded &amp; Software</text>
+  <text x="80" y="440" font-family="IBM Plex Sans" font-size="28" fill="#8f8f97">Bare-metal C on ARM Cortex-M4, plus Python backends and automation.</text>
 
   <rect x="80" y="514" width="1040" height="1" fill="#1f1f24"/>
   <text x="80" y="566" font-family="JetBrains Mono" font-weight="500" font-size="26" fill="#ececee">mabushelbaia.com</text>
