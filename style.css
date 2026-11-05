@@ -113,13 +113,18 @@ section.block { margin-top: clamp(40px,7vw,68px); }
 .cmd { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
 
 .proj {
-  display: block; padding: 18px 16px; margin: 0 -16px;
-  border-radius: 8px; border-bottom: 1px solid var(--border);
-  transition: background-color .2s ease, transform .18s ease;
+  position: relative; display: block; padding: 18px 0;
+  border-bottom: 1px solid var(--border);
 }
-.proj:hover { background: var(--surface); transform: translateX(6px); }
+.proj::before {
+  content: ''; position: absolute; left: -14px; top: 18px; bottom: 18px;
+  width: 2px; border-radius: 2px; background: var(--accent);
+  transform: scaleY(0); transition: transform .2s ease;
+}
+.proj:hover::before, .proj:focus-visible::before { transform: scaleY(1); }
 .proj .top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-.proj .title { font-size: clamp(15px,2.6vw,17px); font-weight: 600; color: var(--fg); }
+.proj .title { font-size: clamp(15px,2.6vw,17px); font-weight: 600; color: var(--fg); transition: color .2s ease; }
+.proj:hover .title, .proj:focus-visible .title { color: var(--accent); }
 .proj .num { color: var(--accent); }
 .proj .host { font-size: 11px; color: var(--muted); flex: none; }
 .proj .desc {
