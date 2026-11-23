@@ -1,9 +1,9 @@
 // ---- data ----
 var projects = [
-  { num:'01', title:'ECE Labs Platform', host:'birzeit.me',
+  { num:'01', title:'ECE Hub', host:'birzeit.me',
     href:'https://birzeit.me',
-    desc:'Replaces the static PDF lab manuals of Birzeit University\'s ECE department with one web platform, now hosting three lab courses. Find a register or step through search, paste code straight into the IDE, and get fixes as soon as they are merged. Installable for offline use, with printable PDFs still built from LaTeX. Includes the ENCS4110 Computer Design Lab manual, written from scratch.',
-    tags:['Web platform','VitePress','PWA','CI/CD'] },
+    desc:'The Birzeit ECE department\'s hub: web lab manuals for four courses that work offline and paste straight into the IDE, plus daily schedules from Ritaj and a schedule builder with no overlapping classes.',
+    tags:['Astro','VitePress','PWA','Python','GitHub Actions'] },
   { num:'02', title:'PIC16F877A Calculator', host:'github',
     href:'https://github.com/mabushelbaia/PIC16F877A-Calculator',
     desc:'A calculator written entirely in PIC assembly for the PIC16F877A: addition, division and modulo entered with a single push button, shown on a 16×2 LCD.',
